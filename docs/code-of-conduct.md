@@ -4,12 +4,7 @@ title: Gatsby Contributor Covenant Code of Conduct
 
 ## Our Pledge
 
-In the interest of fostering an open and welcoming environment, we as
-contributors and maintainers pledge to making participation in our project and
-our community a harassment-free experience for everyone, regardless of age, body
-size, disability, ethnicity, gender identity and expression, level of
-experience, nationality, personal appearance, race, religion, or sexual identity
-and orientation.
+В интересах поощрения открытой и гостеприимной среды мы, как вкладчики и сопровождающие лица, обязуемся сделать участие в нашем проекте и нашем сообществе беззаботным для всех, независимо от возраста, размера тела, инвалидности, этнической принадлежности, гендерной идентичности и выражения, уровень опыта, национальность, личность, раса, религия, сексуальная идентичность и ориентация.
 
 ## Our Standards
 

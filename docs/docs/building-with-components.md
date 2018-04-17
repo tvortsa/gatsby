@@ -1,28 +1,24 @@
 ---
-title: Building with Components
+title: Сборка с помощью компонентов
 ---
 
-To use Gatsby, you will need a basic understanding of React components.
+Для мспользования Gatsby, вам потребуется базовое понимание React компонентов.
 
-The [official tutorial](https://reactjs.org/tutorial/tutorial.html)
-is a good place to start.
+Вот [официальный учебник](https://reactjs.org/tutorial/tutorial.html)
+это хорошее место для начала.
 
-## Why React components?
+## Зачем React компоненты?
 
-React's component architecture simplifies building large websites by encouraging
-modularity, reusability, and clear abstractions. React has a large ecosystem of
-open source components, tutorials, and tooling that can be used seamlessly for
-building sites with Gatsby. Gatsby is built to behave almost exactly like a
-normal React application.
+React - компонентная архитектура упрощает создание крупных веб-сайтов путем поощрения модульности, повторного использования и четких абстракций. React имеет большую экосистему компонентов с открытым исходным кодом, учебных пособий и инструментов, которые могут быть легко использованы для создания сайтов с помощью Gatsby. Gatsby построена так, чтобы вести себя почти как обычное React приложение.
 
 [Thinking in React](https://facebook.github.io/react/docs/thinking-in-react.html)
-is a good resource for learning how to structure applications with React.
+является хорошим ресурсом для изучения того, как структурировать приложения с помощью React.
 
-## How does Gatsby use React Components?
+## Как использует Гэтсби React Компоненты?
 
-Everything in Gatsby is built using components.
+Все в Gatsby строится с использованием компонентов.
 
-A basic directory structure of a project might look like this:
+Основная структура каталогов проекта может выглядеть так::
 
 ```sh
 .
@@ -46,15 +42,14 @@ A basic directory structure of a project might look like this:
         └── index.jsx
 ```
 
-### Page components
+### Компоненты страницы
 
-Components under `src/pages` become pages automatically with paths based on
-their file name. For example `src/pages/index.jsx` is mapped to `yoursite.com`
-and `src/pages/about.jsx` becomes `yoursite.com/about/`. Every `.js` or `.jsx`
-file in the pages directory must resolve to either a string or react component,
-otherwise your build will fail.
+Компоненты в `src/pages` автоматически становятся страницами с путями на основе имени файла. Например `src/pages/index.jsx` отображается на `yoursite.com`
+и `src/pages/about.jsx` становится `yoursite.com/about/`. каждый `.js` или `.jsx`
+файл в папке pages должен разрешаться либо строкой либо компонентом react,
+в противном случае ваша сборка не удастся.
 
-Example:
+пример:
 
 `src/pages/about.jsx`
 
@@ -74,18 +69,16 @@ class AboutPage extends Component {
 export default AboutPage;
 ```
 
-### Page template components
+### Page template компоненты
 
-You can programmatically create pages using "page template components". All
-pages are React components but very often these components are just wrappers around data from files or other sources.
+Вы можете программно создавать страницы, используя "page template components". Все страницы это React компоненты но очень часто эти компоненты представляют собой только обертки вокруг данных из файлов или других источников.
 
-`src/templates/post.jsx` is an example of a page component. It queries GraphQL
-for markdown data and then renders the page using this data.
+`src/templates/post.jsx` является примером page component. Он запрашивает GraphQL
+для markdown данных и затем отображает страницу, используя эти данные.
 
-See [part four](/tutorial/part-four/) of the tutorial for a detailed
-introduction to programmatically creating pages.
+Смотрите [part four](/tutorial/part-four/) учебник для подробного ознакомления с программным созданием страниц.
 
-Example:
+пример:
 
 ```jsx
 import React from "react";
@@ -117,15 +110,13 @@ export const pageQuery = graphql`
 `;
 ```
 
-### Layout components
+### Layout компоненты
 
-`src/layouts/index.jsx` (optional) wraps page components. You can use it for
-portions of pages that are shared across pages like headers and footers.
+`src/layouts/index.jsx` (необязательный) оборачивает компоненты страницы. Вы можете использовать его для частей страниц, которые разделяются между страницами, такими как верхние и нижние колонтитулы.
 
-You can use the `location` prop to render conditionally based on the page
-URL.
+Вы можете использовать `location` prop для визуализации на основе URL-адреса страницы.
 
-Example:
+пример:
 
 ```jsx
 import React from "react";
@@ -142,19 +133,15 @@ export default class Template extends React.Component {
 }
 ```
 
-### HTML component
+### HTML компонент
 
-`src/html.jsx` is responsible for everything other than where Gatsby lives in
-the `<body />`.
+`src/html.jsx` несет ответственность за все, кроме того Gatsby который живет в `<body />`.
 
-In this file you can modify the `<head>` metadata, general structure of the
-document and add external links.
+В этом файле вы можете изменить `<head>` metadata, общая структура документа и добавление внешних ссылок.
 
-Typically you should omit this from your site as the default html.js file will
-suffice. If you need more control over server rendering, then it's valuable to
-have an html.js.
+Как правило, вы должны omit это для вашего сайта так как по файла умолчанию html.js будет достаточно. Если вам требуется больше контроля над рендерингом сервера, тогда важно иметь html.js.
 
-Example:
+пример:
 
 ```jsx
 import React from "react";
@@ -205,7 +192,6 @@ export default class HTML extends React.Component {
 }
 ```
 
-These are examples of the different ways React components are used in Gatsby
-sites. To see full working examples, check out the
-[examples directory](https://github.com/gatsbyjs/gatsby/tree/master/examples) in
-the Gatsby repo.
+Это примеры различных способов использования React компонентов в Gatsby
+сайтах. Чтобы увидеть полные рабочие примеры, ознакомьтесь с
+[examples directory](https://github.com/gatsbyjs/gatsby/tree/master/examples) в реппозитории Gatsby.

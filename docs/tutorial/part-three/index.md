@@ -1,39 +1,34 @@
 ---
-title: Building nested layouts in Gatsby
+title: Создание вложенных макетов в Gatsby
 typora-copy-images-to: ./
 ---
+# Добро пожаловать в третью часть
 
-Welcome to part three!
+## В этой части учебника
 
-## What's in this tutorial?
+В этой части вы узнаете, как Gatsby позволяет создавать «компоненты компоновки». Компоненты компоновки - это разделы вашего сайта, которые вы хотите разделить на нескольких страницах. Например, сайты Gatsby обычно имеют компонент компоновки с общим заголовком и нижним колонтитулом. Другими распространенными вещами для добавления в макеты являются боковая панель и меню навигации.
 
-In this part, you'll learn about how Gatsby lets you create "layout components". Layout components are
-sections of your site that you want to share across multiple pages. For example,
-Gatsby sites will commonly have a layout component with a shared header and
-footer. Other common things to add to layouts are a sidebar and navigation menu.
+На этой странице боковая панель слева (предполагая, что вы находитесь на более крупном устройстве), а заголовок сверху - часть компонента макета gatsbyjs.org.
 
-On this page, the sidebar to the left (assuming you're on a larger device) and
-the header at the top are part of gatsbyjs.org's layout component.
+Давайте погрузимся и исследуем Gatsby layouts.
 
-Let's dive in and explore Gatsby layouts.
+## Установите стартер
 
-## Install a starter
-
-As we mentioned in Part Two, at this point it's probably a good idea to close the terminal window(s) and project files from previous parts of the tutorial, to keep things clean on your desktop. Then, open a new terminal window and run the following commands to create a new Gatsby site in a directory called `tutorial-part-three` and then move to this new directory:
+Как мы уже упоминали в Части второй, на данный момент, вероятно, неплохо закрыть оконные окна и файлы проекта из предыдущих разделов учебника, чтобы сохранить чистоту на рабочем столе. Затем откройте новое окно терминала и запустите следующие команды, чтобы создать новый сайт Gatsby в каталоге под названием `tutorial-part-three` а затем перейдите в этот новый каталог:
 
 ```shell
 gatsby new tutorial-part-three https://github.com/gatsbyjs/gatsby-starter-hello-world
 cd tutorial-part-three
 ```
 
-Once the site is finished installing, install `gatsby-plugin-typography`. For a reminder of how to do this, see Part Two of the tutorials. For
-the Typography.js theme, let's try the "Fairy Gates" typography theme this time:
+После того, как сайт будет завершен, установите `gatsby-plugin-typography`. Для напоминания о том, как это сделать, см. Вторую часть учебников. Для
+темы Typography.js, давайте попробуем "Fairy Gates" typography тему на этот раз:
 
 ```shell
 npm install --save gatsby-plugin-typography typography-theme-fairy-gates
 ```
 
-Create a `src/utils` directory, and then create the typography config file at `src/utils/typography.js`:
+Создайте папку `src/utils` , и затем создайте typography config файл в `src/utils/typography.js`:
 
 ```javascript
 import Typography from "typography";
@@ -44,7 +39,7 @@ const typography = new Typography(fairyGateTheme);
 export default typography;
 ```
 
-Then create our site's `gatsby-config.js` at the root of the site, and add the following code to it:
+Затем создайте наш сайт. `gatsby-config.js` в корне сайта, и добавьте к нему следующий код:
 
 ```javascript
 module.exports = {
@@ -59,8 +54,7 @@ module.exports = {
 };
 ```
 
-Now, let's add a few different pages: a front page, an about page, and a contact
-page.
+Теперь давайте добавим несколько разных страниц: главную страницу - front page, about page, и contact page.
 
 `src/pages/index.js`
 
@@ -69,10 +63,9 @@ import React from "react";
 
 export default () => (
   <div>
-    <h1>Hi! I'm building a fake Gatsby site as part of a tutorial!</h1>
+    <h1>Здравствуй! Я создаю поддельный сайт Гэтсби как часть учебника!</h1>
     <p>
-      What do I like to do? Lots of course but definitely enjoy building
-      websites.
+      Что мне нравится делать? Много конечно, но определенно нравится создавать веб-сайты.
     </p>
   </div>
 );
@@ -85,8 +78,8 @@ import React from "react";
 
 export default () => (
   <div>
-    <h1>About me</h1>
-    <p>I’m good enough, I’m smart enough, and gosh darn it, people like me!</p>
+    <h1>Обо мне</h1>
+    <p>Я достаточно хорош, я достаточно умен, и черт возьми, такие люди, как я!</p>
   </div>
 );
 ```
@@ -98,7 +91,7 @@ import React from "react";
 
 export default () => (
   <div>
-    <h1>I'd love to talk! Email me at the address below</h1>
+    <h1>Я бы хотел поговорить! Напишите мне по указанному ниже адресу</h1>
     <p>
       <a href="mailto:me@example.com">me@example.com</a>
     </p>
@@ -108,21 +101,17 @@ export default () => (
 
 ![no-layout](no-layout.png)
 
-We now have the start of a nice personal site!
+Теперь у нас начинается хороший персональный сайт!
 
-But there are a few problems. First, it'd be nice if the page content was
-centered on the screen like in part two of the tutorial. And second, we should
-really have some sort of global navigation so it's easy for visitors to find and
-visit each of the sub-pages.
+Но есть несколько проблем. Во-первых, было бы неплохо, если бы содержимое страницы было сосредоточено на экране, как во второй части учебника. И, во-вторых, мы действительно должны иметь какую-то глобальную навигацию, поэтому посетителям легко найти и посетить каждую из подстраниц.
 
-Let's tackle these problems by creating our first layout component.
+Давайте рассмотрим эти проблемы, создав наш первый компонент компоновки.
 
-## Our first layout component
+## Наш первый layout компонент
 
-First, create a new directory at `src/layouts`. All layout components have to be
-in this directory.
+Сначала создайте новый каталог в `src/layouts`. Все компоненты компоновки должны находиться в этом каталоге.
 
-Let's create a very basic layout component at `src/layouts/index.js`:
+Давайте создадим очень простой компонент компоновки в `src/layouts/index.js`:
 
 ```jsx
 import React from "react";
@@ -134,17 +123,15 @@ export default ({ children }) => (
 );
 ```
 
-_Notice that unlike most `children` props, the `children` prop passed to layout
-components is a function and needs to be executed_
+_Обратите внимание, что в отличие от большинства `children` props,  `children` prop переданный компонентам компоновки, является функцией и должен быть выполнен_
 
-Stop `gatsby develop` and start it again for the new layout to take effect.
+Остановите `gatsby develop` и запустите его снова, чтобы новый макет вступил в силу.
 
 ![with-layout2](with-layout2.png)
 
-Sweet, the layout is working! Now, our text is centered and constrained to a
-column 650 pixels wide, as we specified.
+Сладкий, макет работает! Теперь наш текст центрирован и привязан к столбцу шириной 650 пикселей, как мы указали.
 
-Let's now add, in the same file, our site title:
+Давайте теперь добавим в том же файле название нашего сайта:
 
 ```jsx{5}
 import React from "react";
@@ -156,12 +143,12 @@ export default ({ children }) =>
   </div>
 ```
 
-If we go to any of our three pages we'll see the same title added e.g. the
+Если мы перейдем на любую из трех наших страниц, мы увидим, что добавлен один и тот же заголовок, например,
 `/about/` page:
 
 ![with-title](with-title.png)
 
-Let's add navigation links to each of our three pages:
+Давайте добавим navigation links на каждую из трех страниц:
 
 ```jsx{2-9,12-22}
 import React from "react";
@@ -192,12 +179,12 @@ export default ({ children }) =>
 
 ![with-navigation](with-navigation.png)
 
-And there we have it! A three page site with a basic global navigation.
+И вот он у нас есть! Трехстраничный сайт с базовой глобальной навигацией.
 
-_Challenge:_ With your new "layout component" powers, trying adding headers, footers,
-global navigation, sidebars, etc. to your Gatsby sites!
+_Challenge:_ С новым "layout component" powers, попробуем добавить headers, footers,
+global navigation, sidebars, etc. к вашему сайту Гэтсби!
 
-## What's coming next?
+## Что будет дальше
 
-Continue on to
-[part four of the tutorial where we'll start learning about Gatsby's data layer and programmatic pages!](/tutorial/part-four/)
+Продолжайте
+[часть четвертая учебника, где мы начнем изучать уровень данных Gatsby и программные страницы!](/tutorial/part-four/)

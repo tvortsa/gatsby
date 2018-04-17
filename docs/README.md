@@ -1,7 +1,6 @@
 # Read docs at https://www.gatsbyjs.org/docs
 
-We intend the docs to be read on gatsbyjs.org — you can read them here of course
-:-) just be warned that links won't often work and other things will be missing
-or less than optimal.
+Мы намерены читать документы gatsbyjs.org — вы можете прочитать их здесь, конечно,
+:-) просто следует предупредить, что ссылки не будут часто работать, а другие вещи будут отсутствовать или быть менее оптимальными.
 
-Go forth and build cool stuff.
+Выходите и создавайте классные вещи.

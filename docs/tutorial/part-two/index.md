@@ -1,72 +1,57 @@
 ---
-title: Introduction to Using CSS in Gatsby
+title: Введение в использование CSS в Gatsby
 typora-copy-images-to: ./
 ---
 
-Welcome to part two of the Gatsby tutorial!
+Добро пожаловать во вторую часть урока по Gatsby!
 
-## What's in this tutorial?
+## Что в этом учебнике?
 
-In this part we're going to explore options for styling Gatsby websites and dive
-deeper into using React components for building sites.
+В этой части мы рассмотрим варианты стилизации сайтов Gatsby и погрузимся глубже в использование компонентов React для создания сайтов.
 
-## Building with components
+## Сборка на компонентах
 
-One of the big mental shifts you make when starting to build with components (if you are already a developer) is
-that now your CSS, HTML, and JavaScript are tightly coupled, and often living even
-within the same file.
+Один из больших умственных сдвигов, которые вы делаете, когда начинаете строить с помощью компонентов (если вы уже являетесь разработчиком), заключается в том, что теперь ваши CSS, HTML и JavaScript тесно связаны и часто живут даже в одном файле.
 
-While a seemingly simple change, this has profound implications for how you think
-about building websites.
+Хотя, казалось бы, простое изменение, это имеет глубокие последствия для того, как вы думаете о создании сайтов.
 
-Take the example of creating a custom button. In the past you would
-create a CSS class (perhaps `.primary-button`) with your custom styles and then
-whenever you want to apply those styles e.g.
+Возьмем пример создания пользовательской кнопки. Раньше вы создавали бы класс CSS (возможно, `.primary-button`) с вашими настраиваемыми стилями, а затем всякий раз, когда вы хотите применить эти стили, например
 
 ```html
 <button class="primary-button">
-  Click me
+  Нажми на меня
 </button>
 ```
 
-In the world of components, you instead create a `PrimaryButton` component with
-your button styles and use it throughout your site like:
+В мире компонентов, вы вместо этого создаете `PrimaryButton` компонент с вашими стилями кнопок и используйте его на своем сайте, например:
 
 <!-- prettier-ignore -->
 ```jsx
-<PrimaryButton>Click me</PrimaryButton>
+<PrimaryButton>Нажми на меня</PrimaryButton>
 ```
 
-Components become the base building blocks of your site. Instead of being
-limited to what the browser provides e.g. `<button />`, you can easily create new
-building blocks that elegantly meet the needs of your projects.
+Компоненты становятся базовыми строительными блоками вашего сайта. Вместо того, чтобы ограничиваться тем, что предоставляет браузер, например `<button />`, вы можете легко создавать новые строительные блоки, которые элегантно отвечают потребностям ваших проектов.
 
-## Creating global styles
+## Создание глобальных стилей
 
-Every site has some sort of global style. This includes things like the site's
-typography and background colors. These styles set the overall feel of the
-site—much like the color and texture of a wall sets the overall feel of a room.
+Каждый сайт имеет своего рода глобальный стиль. Сюда относятся такие вещи, как типография и цвет фона. Эти стили устанавливают общее ощущение сайта - так же, как цвет и текстура стены создают общее ощущение комнаты.
 
-Often people will use something like Bootstrap or Foundation for their global
-styles. The problem with these, however, is they're difficult to customize and
-they're not designed to work well with React components.
+Часто люди используют что-то вроде Bootstrap или Foundation для своих глобальных стилей. Проблема с ними, однако, заключается в том, что их трудно настроить, и они не предназначены для работы с компонентами React.
 
-For this tutorial, let's explore a JavaScript library called
-[Typography.js](https://github.com/kyleamathews/typography.js) that generates
-global styles and works particularly well with Gatsby and React.
+В этом уроке давайте рассмотрим библиотеку JavaScript, называемую
+[Typography.js](https://github.com/kyleamathews/typography.js) который генерирует глобальные стили и особенно хорошо работает с Gatsby и React.
 
 ### Typography.js
 
-Typography.js is a JavaScript library which generates typographic CSS.
+Typography.js это библиотека JavaScript, которая генерирует типографский CSS.
 
-Instead of directly setting the `font-size` of different HTML elements, you tell
-Typography.js things like your desired `baseFontSize` and `baseLineHeight` and
-based on these, it generates the base CSS for all your elements.
+Вместо прямого задания `font-size` различных HTML-элементов, вы говорите
+Typography.js такие вещи, как ваши `baseFontSize` и `baseLineHeight` и
+на основе этого, он генерирует базу CSS для всех ваших элементов.
 
-This makes it trivial to change the font size of all elements on a site without
-having to directly modify the dozens of CSS rules.
+Это делает тривиальным изменить размер шрифта для всех элементов на сайте без необходимости прямого изменения десятков CSS правил.
 
-Using it looks something like this:
+Использование этого выглядит примерно так:
 
 ```javascript
 import Typography from "typography";
@@ -86,40 +71,34 @@ const typography = new Typography({
 });
 ```
 
-## Gatsby plugins
+## Gatsby плагины
 
-But before we can get back to building and trying out Typography.js, let's make
-a quick diversion and talk about Gatsby plugins.
+Но прежде чем мы сможем вернуться к созданию и опробовать Typography.js, давайте быстро перейдем и поговорим о плагинах Gatsby.
 
-You're probably familiar with the idea of plugins. Many software systems support
-adding custom plugins to add new functionality or even modify the core workings
-of the software.
+Вероятно, вы знакомы с идеей плагинов. Многие программные системы поддерживают добавление пользовательских плагинов для добавления новых функциональных возможностей или даже изменения основной работы программного обеспечения.
 
-Gatsby plugins work the same way.
+Плагины Gatsby работают также.
 
-Community members (like you!) can contribute plugins (small amounts of
-JavaScript code) that others can then use when building Gatsby sites.
+Члены сообщества (такие как ты!) могут вносить плагины (небольшие количества
+JavaScript кода) которые другие могут затем использовать при создании сайтов Гэтсби.
 
-There's already dozens of plugins! Check them out at the
+Там уже десятки плагинов! Проверьте их на
 [plugins section of the site](/docs/plugins/).
 
-Our goal with Gatsby plugins is to make them straightforward to install and use. In almost every Gatsby site you
-build, you will be installing plugins. While working through the rest of the
-tutorial, you'll have many opportunities to practice installing and using
-plugins.
+Наша цель с плагинами Gatsby - сделать их простыми для установки и использования. Почти на каждом сайте Gatsby, который вы создаете, вы будете устанавливать плагины. Во время работы над остальной частью учебника у вас будет много возможностей для практики установки и использования плагинов.
 
-## Installing your first Gatsby plugin
+## Установка вашего первого плагина Gatsby
 
-Let's start by creating a new site. At this point it probably makes sense to close the terminal windows you used to build tutorial-part-one so that you don't accidentally start building tutorial-part-two in the wrong place. If you don't close tutorial-part-one prior to building tutorial-part-two, you will see that tutorial-part-two appears at localhost:8001 instead of localhost:8000.
+Начнем с создания нового сайта. На данный момент, вероятно, имеет смысл закрыть окна терминала, которые вы использовали для создания учебника-части-одного, чтобы вы случайно не приступили к созданию учебника-части-2 в неположенном месте. Если вы не закроете учебник-часть-один до создания учебника-части-2, вы увидите, что учебник-часть-два появляется на localhost: 8001 вместо localhost: 8000.
 
-Just like in part one, open a new terminal window and run the following commands to create a new Gatsby site in a directory called `tutorial-part-two`. Then, change to this new directory:
+Как и в первой части, откройте новое окно терминала и запустите следующие коммиты, чтобы создать новый сайт Gatsby в каталоге под названием`tutorial-part-two`. Затем перейдите в этот новый каталог:
 
 ```shell
 gatsby new tutorial-part-two https://github.com/gatsbyjs/gatsby-starter-hello-world
 cd tutorial-part-two
 ```
 
-This creates a new site with the following structure.
+Это создает новый сайт со следующей структурой.
 
 ```shell
 ├── package.json
@@ -128,21 +107,20 @@ This creates a new site with the following structure.
 │       └── index.js
 ```
 
-This is the minimal setup for a Gatsby site.
+Это минимальная настройка для сайта Гэтсби.
 
-To install a plugin, there are two steps. First, you install the plugin's NPM
-package and second, you add the plugin to your site's `gatsby-config.js`.
+Чтобы установить плагин, есть два шага. Во-первых, вы устанавливаете NPM-пакет плагина, а во-вторых, вы добавляете плагин на сайт `gatsby-config.js`.
 
-Typography.js has a Gatsby plugin, so let's install that by running:
+Typography.js имеет плагин Gatsby, поэтому давайте установим это, запустив:
 
 ```shell
 npm install --save gatsby-plugin-typography
 ```
 
-Next, in your code editor, create a file at the root of your project folder named `gatsby-config.js`.
-This is where you add plugins along with other site configuration.
+Затем в редакторе кода создайте файл в корне вашей папки проекта с именем`gatsby-config.js`.
+Здесь вы добавляете плагины вместе с другой конфигурацией сайта.
 
-Copy the following into `gatsby-config.js`
+Скопируйте следующее в `gatsby-config.js`
 
 ```javascript
 module.exports = {
@@ -150,18 +128,13 @@ module.exports = {
 };
 ```
 
-Gatsby reads the site's config file when starting. Here, we tell it to look for a
-plugin named `gatsby-plugin-typography`. Gatsby knows to look for plugins that
-are NPM packages, so it will find the package we installed previously.
+Gatsby считывает файл конфигурации сайта при запуске. Здесь мы говорим, что он ищет плагин с именем `gatsby-plugin-typography`. Гэтсби знает, что нужно искать плагины, которые являются пакетами NPM, поэтому он найдет тот пакет, который мы установили ранее.
 
-Now run `gatsby develop`. Once you load the site, if you inspect the generated
-HTML using the Chrome developer tools, you'll see that the typography plugin
-added a `<style>` element to the `<head>` element with its generated CSS.
+Теперь запустите `gatsby develop`. После загрузки сайта, если вы проверите сгенерированный HTML-код с помощью инструментов разработчика Chrome, вы увидите, что плагин типографии добавил ` <style>` element к `<head>` элементу с его сгенерированным CSS.
 
 ![typography-styles](typography-styles.png)
 
-Copy the following into your `src/pages/index.js` so we can better see the
-effect of the typography CSS generated by Typography.js.
+Скопируйте следующее в ваш `src/pages/index.js` поэтому мы можем лучше увидеть эффект типографского CSS, созданного Typography.js.
 
 ```jsx
 import React from "react";
@@ -171,18 +144,15 @@ export default () => (
     <h1>Richard Hamming on Luck</h1>
     <div>
       <p>
-        From Richard Hamming’s classic and must-read talk, “<a href="http://www.cs.virginia.edu/~robins/YouAndYourResearch.html">
-          You and Your Research
+        From Richard Hamming’s classic и must-read talk, “<a href="http://www.cs.virginia.edu/~robins/YouиYourResearch.html">
+          You и Your Research
         </a>”.
       </p>
       <blockquote>
         <p>
-          There is indeed an element of luck, and no, there isn’t. The prepared
-          mind sooner or later finds something important and does it. So yes, it
-          is luck.{" "}
+          На самом деле есть элемент удачи, и нет, нет. Готовый ум рано или поздно находит что-то важное и делает это. Так что да, это удача.{" "}
           <em>
-            The particular thing you do is luck, but that you do something is
-            not.
+            Особая вещь, которую вы делаете, это удача, но что вы делаете что-то не.
           </em>
         </p>
       </blockquote>
@@ -192,13 +162,12 @@ export default () => (
 );
 ```
 
-Your site should now look like this:
+Теперь ваш сайт должен выглядеть так::
 
 ![typography-not-centered](typography-not-centered.png)
 
-Let's make a quick improvement. Many sites have a single column of text centered
-in the middle of the page. To create this, add the following styles to the
-`<div>` in `src/pages/index.js`.
+Давайте сделаем быстрое улучшение. На многих сайтах имеется один столбец с центром в центре страницы. Чтобы создать это, добавьте следующие стили в
+`<div>` в `src/pages/index.js`.
 
 ```jsx{4,25}
 import React from "react";
@@ -208,18 +177,15 @@ export default () =>
     <h1>Richard Hamming on Luck</h1>
     <div>
       <p>
-        From Richard Hamming’s classic and must-read talk, “<a href="http://www.cs.virginia.edu/~robins/YouAndYourResearch.html">
-          You and Your Research
+        From Richard Hamming’s classic и must-read talk, “<a href="http://www.cs.virginia.edu/~robins/YouиYourResearch.html">
+          You и Your Research
         </a>”.
       </p>
       <blockquote>
         <p>
-          There is indeed an element of luck, and no, there isn’t. The prepared
-          mind sooner or later finds something important and does it. So yes, it
-          is luck.{" "}
+          На самом деле есть элемент удачи, и нет, нет. Готовый ум рано или поздно находит что-то важное и делает это. Так что да, это удача.{" "}
           <em>
-            The particular thing you do is luck, but that you do something is
-            not.
+            Особая вещь, которую вы делаете, это удача, но что вы делаете что-то не.
           </em>
         </p>
       </blockquote>
@@ -230,13 +196,10 @@ export default () =>
 
 ![basic-typography-centered](typography-centered.png)
 
-Ah, this is starting to look nice!
+Ах, это начинает выглядеть красиво! То, что мы видим здесь, это CSS CSS по умолчанию. Однако мы можем легко настроить его. Давайте сделаем это.
 
-What we're seeing here is the default CSS Typography.js produces. We can easily
-customize it, however. Let's do that.
-
-In your site, create a new directory at `src/utils`. In that directory, create a file named
-`typography.js`. In that file, add the following code.
+Создайте новый каталог на своем сайте. `src/utils`. В этом каталоге создайте файл с именем
+`typography.js`. В этом файле добавьте следующий код.
 
 ```javascript
 import Typography from "typography";
@@ -246,8 +209,7 @@ const typography = new Typography({ baseFontSize: "18px" });
 export default typography;
 ```
 
-Then set this module to be used by `gatsby-plugin-typography` as its config in
-our `gatsby-config.js` file.
+Затем установите этот модуль для использования `gatsby-plugin-typography` в качестве его конфигурации в нашем файле` gatsby-config.js`.
 
 ```javascript{2..9}
 module.exports = {
@@ -262,24 +224,23 @@ module.exports = {
 };
 ```
 
-Stop `gatsby develop` by typing <kbd>Ctrl + c</kbd> into the terminal window where the development process has been running. Then, run `gatsby develop` again to restart it. This will allow our plugin change to take effect.
+ОСтановите `gatsby develop` набравg <kbd>Ctrl + c</kbd> в окно терминала, в котором запущен процесс разработки. Затем запустите `gatsby develop` снова, чтобы перезапустить его. Это позволит изменить наши плагины.
 
-Now, all the text font sizes should be slightly bigger. Try changing the
-`baseFontSize` to `24px` then `12px`. All elements get resized as their
-`font-size` is based on the `baseFontSize`.
+Теперь все размеры шрифта текста должны быть немного больше. Попробуйте изменить
+`baseFontSize` на `24px` затем `12px`. Все элементы изменяются как их
+`font-size` основывается на `baseFontSize`.
 
-_Note that if you use `gatsby-plugin-typography` with the default starter, you'll need to delete the default index.css used by that starter as it overrides the Typography.js CSS_
+_Обратите внимание, что если вы используете `gatsby-plugin-typography` с начальным стартом по умолчанию вам нужно удалить дефолтный index.css используемый этим стартером, поскольку он переопределяет Typography.js CSS_
 
-There are
-[many themes available](https://github.com/KyleAMathews/typography.js#published-typographyjs-themes)
-for Typography.js. Let's try a couple. In your terminal at the root of your
-site, run:
+Есть
+[многие темы доступныe](https://github.com/KyleAMathews/typography.js#published-typographyjs-themes)
+для Typography.js. Попробуем пару. В своем терминале в корне вашего сайта запустите:
 
 ```shell
 npm install --save typography-theme-bootstrap typography-theme-lawton
 ```
 
-To use the Bootstrap theme, change your typography code to:
+Чтобы использовать Bootstrap тему, измените ваш typography код на:
 
 ```javascript{2,4}
 import Typography from "typography";
@@ -292,9 +253,7 @@ export default typography;
 
 ![typography-bootstrap](typography-bootstrap.png)
 
-Themes can also add Google Fonts. The Lawton theme we installed along with the
-Bootstrap theme does this. Replace your typography module code with the
-following, then restart the dev server (necessary to load the new Google Fonts).
+Темы также могут добавлять Google Fonts. Тема Lawton, которую мы установили вместе с темой Bootstrap, делает это. Замените код модуля типографии следующим, а затем перезапустите сервер dev (необходимый для загрузки новых шрифтов Google).
 
 ```javascript{2-3,5}
 import Typography from "typography";
@@ -310,46 +269,42 @@ export default typography;
 
 _Challenge:_ Typography.js has more than 30 themes!
 [Try them live](http://kyleamathews.github.io/typography.js) or check out
-[the complete list](https://github.com/KyleAMathews/typography.js#published-typographyjs-themes) and try installing one on your current Gatsby site.
+[the complete list](https://github.com/KyleAMathews/typography.js#published-typographyjs-themes) и try installing one on your current Gatsby site.
 
-## Component CSS
+## Компонент CSS
 
-Gatsby has a wealth of options available for styling components. In this tutorial, we'll explore
-one very popular method: CSS Modules.
+У Gatsby есть множество возможностей для компоновки компонентов. В этом уроке мы рассмотрим один очень популярный метод: CSS-модули.
 
 ### CSS-in-JS
 
-While we won't cover CSS-in-JS in this initial tutorial, we encourage you to explore CSS-in-JS libraries because these solve many of the problems with traditional CSS plus help make your React components even smarter. There are mini-tutorials for two libraries, [Glamor](/docs/glamor/) and [Styled Components](/docs/styled-components/). Check out the following resources for background reading on CSS-in-JS:
+Пока мы не будем раскрывать CSS-in-JS в этом первоначальном учебном пособии мы рекомендуем вам изучить CSS-in-JS libraries потому что они решают многие проблемы с традиционным CSS плюс помочь сделать ваши компоненты React более умными. There are mini-tutorials for two libraries, [Glamor](/docs/glamor/) и [Styled Components](/docs/styled-components/). Check out the following resources for background reading on CSS-in-JS:
 
-[Christopher "vjeux" Chedeau's 2014 presentation that sparked this movement](https://speakerdeck.com/vjeux/react-css-in-js)
+[Кристофер "vjeux" Chedeau's 2014 презентация, которая вызвала это движение](https://speakerdeck.com/vjeux/react-css-in-js)
 as well as
-[Mark Dalgleish's more recent post "A Unified Styling Language"](https://medium.com/seek-blog/a-unified-styling-language-d0c208de2660).
+[Mark Dalgleish's последнее сообщение "A Unified Styling Language"](https://medium.com/seek-blog/a-unified-styling-language-d0c208de2660).
 
 ### CSS Modules
 
-Let's explore **CSS Modules**.
+Давайте исследовать **CSS Modules**.
 
-Quoting from
+Цитата из
 [the CSS Module homepage](https://github.com/css-modules/css-modules):
 
-> A **CSS Module** is a CSS file in which all class names and animation names
-> are scoped locally by default.
+> **CSS Module** это CSS-файл, в котором все имена классов и имена анимаций
+> локальны по умолчанию.
 
-CSS Modules is very popular as it lets you write CSS like normal but with a lot
-more safety. The tool automatically makes class and animation names unique so
-you don't have to worry about selector name collisions.
+CSS Modules очень популярен, так как позволяет писать CSS как обычно, но с гораздо большей безопасностью. Инструмент автоматически делает имена классов и анимаций уникальными, поэтому вам не нужно беспокоиться о столкновениях имен селекторных имен.
 
-CSS Modules are highly recommended for those new to building with Gatsby (and
-React in general).
+CSS Modules настоятельно рекомендуется для тех, кто работает с Gatsby (и
+React в целом).
 
-Gatsby works out of the box with CSS Modules.
+Gatsby работает из коробки с CSS Modules.
 
-Let's build a page using CSS Modules.
+Давайте построим страницу, используя CSS Modules.
 
-First, let's create a new `Container` component which we'll use for each of the
-CSS-in-JS examples. Create a `components` directory at `src/components` and
-then, in this directory, create a file named `container.js` and paste the
-following:
+Сначала давайте создадим новый `Container` компонент, который мы будем использовать для каждого из
+CSS-in-JS примера. Создайте папку `components` в `src/components` и
+тогда, в этом каталоге создайте файл с именем `container.js` и вставьте следующее:
 
 ```javascript
 import React from "react";
@@ -359,7 +314,7 @@ export default ({ children }) => (
 );
 ```
 
-Then, create a new component page by creating a file at
+Затем создайте новый component page создав файл на
 `src/pages/about-css-modules.js`:
 
 ```javascript
@@ -375,21 +330,18 @@ export default () => (
 );
 ```
 
-You'll notice we imported the `Container` component we just created.
+Вы заметите, что мы импортировали `Container` компонент, который мы только что создали.
 
-Your page should now look like:
+Теперь ваша страница должна выглядеть так::
 
 ![css-modules-1](css-modules-1.png)
 
-Let's create a list of people with names, avatars, and short latin
-biographies.
+Давайте создадим список людей с именами, аватарами и краткой латинской биографией.
 
-First, let's create the file for the CSS at
-`src/pages/about-css-modules.module.css`. You'll notice that the file name ends
-with `.module.css` instead of `.css` like normal. This is how we tell Gatsby
-that this CSS file should be processed as CSS modules.
+Сначала давайте создадим файл для CSS в
+`src/pages/about-css-modules.module.css`. Вы заметите, что имя файла заканчивается на `.module.css` а не `.css` как обычно. Так мы говорим Гэтсби, что этот CSS-файл должен обрабатываться как модули CSS.
 
-Paste the following into the file:
+Вставьте в файл следующее::
 
 ```css
 .user {
@@ -425,33 +377,27 @@ Paste the following into the file:
 }
 ```
 
-Now import that file into the `about-css-modules.js` page we created earlier, by adding the following on lines 2 and 3.
-(The `console.log(styles)` code logs the resulting import so we can see what the processed file looks like).
+Теперь импортируйте этот файл в `about-css-modules.js` страницу, которую мы создали ранее, добавив следующие строки 2 и 3.
+( `console.log(styles)` код регистрирует полученный импорт, чтобы мы могли видеть, как выглядит обработанный файл).
 
 ```javascript
 import styles from "./about-css-modules.module.css";
 console.log(styles);
 ```
 
-If you open the developer console (using e.g. Firefox or Chrome's developer tools) in your browser, you'll see:
+Если вы откроете консоль разработчика (используя, например, инструменты разработчика Firefox или Chrome) в вашем браузере вы увидите:
 
 ![css-modules-console](css-modules-console.png)
 
-If you compare that to our CSS file, you'll see that each class is now a key in
-the imported object pointing to a long string e.g. `avatar` points to
-`about-css-modules-module---avatar----hYcv`. These are the class names CSS
-Modules generates. They're guaranteed to be unique across your site. And because
-you have to import them to use the classes, there's never any question about
-where some CSS is being used.
+Если вы сравните это с нашим CSS-файлом, вы увидите, что каждый класс теперь является ключом в импортированном объекте, указывающем на длинную строку e.g. `avatar` указывает на
+`about-css-modules-module---avatar----hYcv`. Это имена классов, которые генерируют модули CSS. Они гарантированно будут уникальными на вашем сайте. и потому, что вам нужно импортировать их для использования классов, никогда не возникает вопросов о том, где используется какой-либо CSS.
 
-Let's use our styles to create a `User` component.
+Давайте используем наши стили для созданиякомпонента `User`.
 
-Let's create the new component inline in the `about-css-modules.js` page
-component. The general rule of thumb is this: if you use a component in multiple
-places on a site, it should be in its own module file in the `components`
-directory. But, if it's used only in one file, create it inline.
+Давайте создадим новый компонент inline в `about-css-modules.js` page
+component. Общее правило - это: если вы используете компонент в нескольких местах на сайте, он должен быть в собственном файле модуля в папке `components`. Но, если он используется только в одном файле, создавайте его в inline.
 
-Modify `about-css-modules.js` so it looks like the following:
+измените `about-css-modules.js` поэтому он выглядит следующим образом:
 
 ```jsx{6-17,23-30}
 import React from "react";
@@ -490,22 +436,21 @@ export default () =>
   </Container>
 ```
 
-The finished page should now look like:
+Готовая страница теперь должна выглядеть так::
 
 ![css-modules-final](css-modules-final.png)
 
-### Other CSS options
+### Другие варианты CSS
 
-Gatsby supports almost every possible styling option (if there isn't a plugin
-yet for your favorite CSS option,
-[please contribute one!](/docs/how-to-contribute/))
+Gatsby поддерживает практически все возможные варианты стилизации (если еще нет плагина для вашего любимого варианта CSS,
+[пожалуйста, сделайте его!](/docs/how-to-contribute/))
 
 * [Sass](/packages/gatsby-plugin-sass/)
 * [Emotion](/packages/gatsby-plugin-emotion/)
 * [JSS](/packages/gatsby-plugin-jss/)
 * [Stylus](/packages/gatsby-plugin-stylus/)
-* and more!
+* и more!
 
-## What's coming next?
+## Что дальше
 
-Now continue on to [Part Three](/tutorial/part-three/) of the tutorial.
+Теперь продолжайте [Part Three](/tutorial/part-three/) учебника.

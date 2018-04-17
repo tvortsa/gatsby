@@ -1,28 +1,22 @@
 ---
-title: Introduction to Gatsby basics
+title: Введение в основы Gatsby
 typora-copy-images-to: ./
 ---
 
-Hello fellow Gatsby-er! Welcome to _part one_ of our community Gatsby.js
-tutorial.
+Привет, парень Гэтсби! Добро пожаловать в _part one_ учебника нашего сообщества Gatsby.js.
 
-## What's in this tutorial?
+## Что в этом учебнике?
 
-In this tutorial you'll be gently introduced to the Gatsby development
-environment, how to create component pages, and how to build and deploy Gatsby
-sites.
+В этом уроке вы будете осторожно представлены в среде разработки Gatsby, как создавать страницы компонентов, а также как создавать и развертывать сайты Gatsby.
 
-Sit down, buckle up, and let's get going!
+## Проверьте свою среду разработки
 
-## Check your development environment
-
-Let's check first that you have everything set up to start creating with Gatsby.
-You will need a recent version of Node.js installed.
+Вам понадобится последняя версия Node.js.
 
 Node.js is a programming tool for running JavaScript on servers and in your
 computer's terminal. Gatsby is built using Node.js.
 
-Open a terminal window. See
+Открыть окно терминала. См
 [terminal instructions for Mac users](http://www.macworld.co.uk/feature/mac-software/how-use-terminal-on-mac-3608274/) and
 [terminal instructions for Windows users](https://www.quora.com/How-do-I-open-terminal-in-windows). In your terminal window, type `node --version` and hit ENTER, then `npm --version` and hit ENTER (tip: to run a specified command, you must type the command into your terminal and then press ENTER. Then the command will run).
 
@@ -32,75 +26,64 @@ You should see something like:
 
 Gatsby supports versions of Node back to v6 and npm to v3.
 
-If you don't have Node.js installed, go to https://nodejs.org/ and install the
-recommended version for your operating system.
+Если у вас нет Node.js , пройдите на кhttps://nodejs.org/ и установите рекомендованную версию для вашей операционной системы.
 
-## Install the "Hello World" starter
+## Установите "Hello World" starter
 
-Gatsby uses "starters" for starting new projects. Starters
-are partially built Gatsby sites that are pre-configured to help you get moving faster.
-There are several official starters and many others contributed from the Gatsby
-community! [See the Starters page for the full list](/docs/gatsby-starters/).
+Gatsby использует "starters" для запуска новых проектов. Starters
+частично собранные Gatsby сайты которые предварительно настроены, чтобы помочь вам быстрее двигаться.
+Есть несколько официальных стартеров, и многие другие участвовали в сообществе Гэтсби! [See the Starters page for the full list](/docs/gatsby-starters/).
 
-To install a starter, first install Gatsby's command line program by running the following:
+Чтобы установить starter, сначала установите Gatsby's программу командной строки путем запуска команд:
 
 ```sh
 npm install --global gatsby-cli
 ```
 
-Once that's installed, open a new terminal window and run the following commands to create a new Gatsby site in a directory called `tutorial-part-one` and then move to this new directory:
+После установки, откройте новое окно терминала и запустите следующие команды, чтобы создать новый сайт Gatsby в каталоге под названием`tutorial-part-one` а затем перейдите в этот новый каталог:
 
 ```sh
 gatsby new tutorial-part-one https://github.com/gatsbyjs/gatsby-starter-hello-world
 cd tutorial-part-one
 ```
 
-This command downloads the files for the starter and then installs the needed
-npm packages. It should take around 1.5-3 minutes to finish. It may look like
-nothing is happening at first; be patient!
+Эта команда загружает файлы для стартера, а затем устанавливает необходимые пакеты npm.
 
-Now let's try running Gatsby!
+Теперь давайте попробуем запустить Гэтсби!
 
-Gatsby has a built-in development server. Let's start it up by running the
-following command:
+У Gatsby есть встроенный сервер разработки. Давайте запустим его, выполнив следующую команду:
 
 ```sh
 gatsby develop
 ```
 
-You should shortly see some text, close to the bottom, that says `The development server is listening at:` [http://localhost:8000](http://localhost:8000). Open that address in your
-browser and...
+Вы должны в ближайшее время увидеть текст, внизу, который говорит `The development server is listening at:` [http://localhost:8000](http://localhost:8000). Откройте этот адрес в своем браузере и...
 
 ![Gatsby.js hello world](hello-world.png)
 
-Yeah! It's working!!!
+Да! Работает!!!
 
 Too cool 😎
 
-Gatsby's development server is a "hot reloading" server, meaning any change you
-make to your React.js page components (and later we'll learn, your data files)
-will be immediately visible and/or loaded in the browser.
+Сервер разработки Gatsby является сервером «горячей перезагрузки», что означает любое изменение, которое вы делаете для своего React.js компоненты страницы (и позже мы узнаем, что ваши файлы данных)
+будет сразу виден и / или загружен в браузере.
 
-This is huge because it makes development so much faster and fun.
+Это делает разработку намного быстрее и веселее.
 
-Let's try it.
+Давай попробуем.
 
-You'll need code editing software for the next part of this tutorial.
-[VS Code](https://code.visualstudio.com/) is a nice one. With your code editor,
-open the folder on your computer called "tutorial-part-one," which was
-automatically created in the location you chose when you ran the `gatsby new` terminal command above.
+Вам понадобится программное обеспечение для редактирования кода для следующей части этого руководства.
+[VS Code](https://code.visualstudio.com/) это хороший. С помощью редактора кода,
+откройте папку на вашем компьютере "tutorial-part-one," который был автоматически создан в выбранном вами местоположении, когда вы запускали `gatsby new` команду терминала выше.
 
-Once you've opened the "tutorial-part-one" folder in your code editing
-software, it's time to edit your website. You'll see groups of directories and files; find the file in this location: `src/pages/index.js`. Once you open that file, try changing "Hello
-world!" in the page component to "Hello Gatsby!". Once you save that change, the text in your browser
-should change within a second (tip: you will always need to save changes before they appear in your browser).
+Как только вы откроете папку "tutorial-part-one" в редакторе кода наступит время редактирования вашего сайта. Вы увидите группы каталогов и файлов; найти файл в этом месте: `src/pages/index.js`. Когда вы откроете этот файл, попробуйте изменить "Hello
+world!" в компоненте страницы "Hello Gatsby!". После сохранения изменений текст в браузере должен измениться в течение секунды (tip: вам всегда нужно сохранять изменения до того, как они появятся в вашем браузере.).
 
-Try some other tricks, like the ones below:
+Попробуйте другие трюки, например, ниже:
 
-1. Gatsby lets you add "inline styles" via a JavaScript style "prop" (we'll
-   learn about other styling options later).
+1. Gatsby позволяет добавить "inline styles" через JavaScript style "prop" (мы узнаем о других вариантах стиля позже).
 
-   Try replacing your page component with this:
+   Попробуйте заменить компонент страницы на этот:
 
 ```jsx
 import React from "react";
@@ -108,9 +91,9 @@ import React from "react";
 export default () => <div style={{ color: `blue` }}>Hello Gatsby!</div>;
 ```
 
-Change the color to "pink". Then to "tomato".
+Измените цвет на "pink". Затем "tomato".
 
-2. Add some paragraph text.
+2. Добавь немного paragraph text.
 
 ```jsx{5-6}
 import React from "react";
@@ -122,7 +105,7 @@ export default () =>
  </div>
 ```
 
-3. Add an image (in this case, a random one from Unsplash)
+3. Добавьте изображение (в этом случае случайный из Unsplash)
 
 ```jsx{7}
 import React from "react";
@@ -135,25 +118,19 @@ export default () =>
  </div>
 ```
 
-Now your screen should look something like this:
+Теперь ваш экран должен выглядеть примерно так::
 
 ![Screen Shot 2017-06-03 at 11.57.10 AM](moving-along.png)
 
-## Linking between pages
+## Связывание страниц
 
-Websites are pages and links between pages. While we've now got a pretty sweet
-first page—one page and no links doesn't feel very webby. So let's create a new
-page.
+Веб-сайты - это страницы и ссылки между страницами. В то время как у нас теперь есть довольно сладкая первая страница - одна страница, и никакие ссылки не очень чувствительны к webby. Итак, давайте создадим новую страницу.
 
-First create the link to the new page.
+Сначала создайте ссылку на новую страницу.
 
-To do that, import the `<Link>` component from the `gatsby-link` package that
-was installed along with the starter.
+Для этого импортируйте `<Link>` компонента из `gatsby-link` пакет, который был установлен вместе со стартером.
 
-Unlike the normal HTML `<a>` element, Gatsby's `Link` component uses `to` for
-specifying the page you want to link to. Let's link to a page with the pathname
-of `/page-2/`. Try adding that. Once you're done, the page component should look
-like:
+В отличие от обычного HTML `<a>` element, Gatsby's `Link` component использования `to` для указания страницы, на которую вы хотите установить ссылку. Давайте установим ссылку на страницу с именем пути `/page-2/`. Попробуйте добавить, что. Как только вы закончите, компонент страницы должен выглядеть так:
 
 ```jsx{2,9-12}
 import React from "react";
@@ -171,14 +148,13 @@ export default () =>
   </div>
 ```
 
-If you click on that link in the browser you should see:
+Если вы нажмете на эту ссылку в браузере, вы увидите:
 
 ![Gatsby.js development 404 page](dev-404.png)
 
-What you're seeing is the Gatsby.js development 404 page. Let's do what it says
-and create a React.js page component at `src/pages/page-2.js`.
+То, что вы видите, это Gatsby.js development 404 page. Давайте сделаем то, что он говорит, и создадим React.js page component в `src/pages/page-2.js`.
 
-Make the second page component look something like:
+Сделайте второй компонент страницы похожим на:
 
 ```jsx
 import React from "react";
@@ -192,25 +168,24 @@ export default () => (
 );
 ```
 
-Save that and now you should be able to click back and forth between the two
-pages!
+Сохраните это, и теперь вы сможете щелкнуть назад и вперед между двумя страницами!
 
 <video controls="controls" autoplay="true" loop="true">
   <source type="video/mp4" src="/images/clicking-2.mp4"></source>
   <p>Your browser does not support the video element.</p>
 </video>
 
-_Challenge_: Using the instructions above as hints, see if you can create a third page and link to it from the home page.
+_Challenge_: Используя приведенные выше инструкции в качестве подсказок, посмотрите, можно ли создать третью страницу и связать ее с домашней страницей.
 
-## Interactive page
+## Интерактивная страница
 
-One nice thing about using Gatsby for building websites vs. other tools is that itʼs easier to add interactivity to your pages. React.js was designed for
-Facebook.com and is used on many other world-class web applications.
+Одна хорошая вещь об использовании Gatsby для создания веб-сайтов и других инструментов заключается в том, что легче добавить интерактивность к вашим страницам. React.js был разработан для
+Facebook.com и используется во многих других веб-приложениях мирового уровня.
 
-Let's see how to add interactive elements to our pages. Let's start with a counter.
+Давайте посмотрим, как добавить интерактивные элементы на наши страницы. Начнем с счетчика.
 
-We'll start by creating a new link to a page at `/counter`/ from our original
-`index.js` page component `<Link to="/counter/">Counter</Link>`.
+Мы начнем с создания новой ссылки на страницу в `/counter`/ от нашего оригинала
+`index.js` компонента страницы `<Link to="/counter/">Counter</Link>`.
 
 ```jsx{13-15}
 import React from "react";
@@ -231,9 +206,7 @@ export default () =>
   </div>
 ```
 
-Add that link, click on it, and then we'll create a "Hello World" page component
-for `/counter/` as before. But instead of using the "functional component" form
-as we did before, this time we'll create a "class" component at `src/pages/counter.js`.
+Добавьте эту ссылку, нажмите на нее, а затем создадим компонент страницы «Hello World» для `/counter/` как прежде. Но вместо использования "functional component" как мы это делали раньше, на этот раз мы создадим "class" компонент в `src/pages/counter.js`.
 
 ```jsx
 import React from "react";
@@ -247,11 +220,9 @@ class Counter extends React.Component {
 export default Counter;
 ```
 
-The class form of React allows us to have component state. We'll need that for
-our counter.
+Форма class в React позволяет нам иметь состояние компонента. Нам это понадобится для нашего счетчика.
 
-Let's continue to flesh out our counter. Let's add two buttons. One to increment
-and one to decrement the count of the counter.
+Давайте продолжим заполнять наш счетчик. Давайте добавим две кнопки. Один для увеличения и один для уменьшения счетчика.
 
 ```jsx{5-12}
 import React from "react";
@@ -272,9 +243,7 @@ class Counter extends React.Component {
 export default Counter
 ```
 
-Now we have everything we need to make a nice counter. Let's make it live.
-
-First we'll set up the component state.
+Теперь у нас есть все необходимое, чтобы сделать хороший счетчик. Давайте сделаем это вживую. Сначала мы настроим состояние компонента.
 
 ```jsx{4-7,13}
 import React from "react";
@@ -300,9 +269,9 @@ class Counter extends React.Component {
 export default Counter
 ```
 
-We're now rendering the current count from the component state.
+Теперь мы показываем текущий счет из состояния компонента.
 
-Let's now change the state when we click on our buttons.
+Давайте теперь изменим состояние, когда мы нажимаем на наши кнопки.
 
 ```jsx{14-19}
 import React from "react";
@@ -332,22 +301,17 @@ class Counter extends React.Component {
 export default Counter
 ```
 
-There you go! A working React.js counter inside your static website 👌
+ВОт и все! Работающий React.js counter внутри вашего статичного вебсайта 👌
 
-_Bonus challenge_: One fun thing is that hot reloading isn't just for content and styles; it
-works on code as well. Currently, when you click the buttons on the counter, the numbers go up and down in increments of 1. Try to make the counter go up and down in a different increments (for example, 5).
+_Bonus challenge_: Одна забавная вещь заключается в том, что горячая перезагрузка предназначена не только для контента и стилей; он работает и над кодом. В настоящее время, когда вы нажимаете кнопки на счетчике, цифры идут вверх и вниз с шагом 1. Попробуйте сделать счетчик вверх и вниз разным шагом (например, 5).
 
-## Deploying Gatsby.js websites
+## Развертывание Gatsby.js сайтов
 
-Gatsby.js is a _static site generator_, which means there are no servers to setup or complicated databases to
-deploy. Instead, the Gatsby `build` command produces a directory of static HTML
-and JavaScript files which you can deploy to a static site hosting service.
+Gatsby.js это _static site generator_, что означает, что нет серверов для установки или создания сложных баз данных для развертывания. Instead, команда Gatsby `build` создает каталог статических файлов HTML и JavaScript, которые можно развернуть на статическом хостинге сайтов.
 
-Let's try using [Surge](http://surge.sh/) for deploying our first Gatsby
-website. Surge is one of many "static site hosts" which make it possible to
-deploy Gatsby sites.
+Попробуем использовать [Surge](http://surge.sh/) для развертывания нашего первого веб-сайта Gatsby. Surge является одним из многих "static site hosts" которые позволяют размещать сайты Гэтсби.
 
-If you haven't previously installed & setup Surge, open a new terminal window and install their terminal tool:
+Если вы ранее не устанавливали и не настраивали Surge, откройте новое окно терминала и установите их терминальный инструмент:
 
 ```bash
 npm install --global surge
@@ -356,35 +320,31 @@ npm install --global surge
 surge
 ```
 
-Next, build your site by running the following command in the terminal at the root of your site (tip: make sure you're running this command at the root of your site, in this case in the tutorial-part-one folder, which you can do by opening a new tab in the same window you used to run `gatsby develop`):
+Затем создайте свой сайт, выполнив следующую команду в терминале в корне вашего сайта (подсказка: убедитесь, что вы используете эту команду в корневом каталоге вашего сайта, в этом случае в папке с учебником и частью, которая вы можете сделать, открыв новую вкладку в том же окне, которое вы использовали для запуска `gatsby develop`):
 
 ```bash
 gatsby build
 ```
 
-Building should take 15-30 seconds. At this point, it's useful to take a look at the files that the `gatsby build` command just prepared to deploy. Take a look at a list of the generated files by typing in the following terminal command into the root of your site, which will let you look at the `public` directory:
+Здание должно 15-30 секунд. С этого момента, полезно взглянуть на файлы, которые команда `gatsby build` подготовила к развертыванию. Взгляните на список сгенерированных файлов, введя следующую команду терминала в корневой каталог вашего сайта, который позволит вам взглянуть на папку `public`:
 
 ```bash
 ls public
 ```
 
-Then finally deploy your site by publishing the generated files to surge.sh.
+Затем, наконец, разверните свой сайт, опубликовав сгенерированные файлы в surge.sh.
 
 ```bash
 surge public/
 ```
 
-Once this finishes running, you should see in your terminal something like:
+Как только это закончится, вы должны увидеть в своем терминале что-то вроде:
 
 ![Screenshot of publishing Gatsby site with Surge](surge-deployment.png)
 
-Open the web address listed on the bottom line (`lowly-pain.surge.sh` in this
-case) and you'll see your newly published site! Good work!
+Откройте веб-адрес, указанный в нижней строке (`lowly-pain.surge.sh` в этом случае) и вы увидите свой недавно опубликованный сайт! Хорошая работа!
 
-## What's coming next?
+## Что дальше
 
-In this tutorial, you've installed Gatsby, played in the development
-environment, and deployed your first site! Awesome! We hope you're enjoying
-yourself so far. Feel free to continue now to part two of the tutorial,
-["Introduction to using CSS in Gatsby"](/tutorial/part-two/), or go exploring around
-the rest of the site.
+В этом уроке вы установили Gatsby, играли в среде разработки и развернули свой первый сайт! Потрясающие! Надеемся, вы до сих пор наслаждаетесь собой. Не стесняйтесь теперь перейти к части второй учебника,
+["Введение в использование CSS в Gatsby"](/tutorial/part-two/), или исследуйте остальные части сайта.

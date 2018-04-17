@@ -22,75 +22,58 @@ GraphQL, we recommend [How to GraphQL](https://www.howtographql.com/).
 
 ## Data in Gatsby
 
-A website has four parts, HTML, CSS, JS, and data. The first half of the
-tutorial focused on the first three. Let's learn now how to use data in Gatsby
-sites.
+Веб-сайт состоит из четырех частей, HTML, CSS, JS, и данные. Первая половина учебника была посвящена первым трем. Давайте теперь узнаем, как использовать данные на сайтах Гэтсби.
 
-What is data?
+Что такое данные?
 
-A very computer science-y answer would be: data is things like `"strings"`,
+Ответ на компьютерную науку - это: данные - это такие вещи, как `"strings"`,
 integers (`42`), objects (`{ pizza: true }`), etc.
 
-For the purpose of working in Gatsby, however, a more useful answer is
-"everything that lives outside a React component".
+В целях работы в Gatsby, Однако, более полезный ответ: "все, что живет вне компонента React".
 
-So far, we've been writing text and adding images _directly_ in components.
-Which is an _excellent_ way to build many websites. But, often you want to store
-data _outside_ components and then bring the data _into_ the component as
-needed.
+До сих пор мы писали текст и добавляли изображения _непосредственно_ в компонентах.
+Это _отличный_ подход для многих сайтов. Но часто вы хотите хранить данные _вне_ компонентов, а затем вносить данные _внутрь_ компонентов по мере необходимости.
 
-For example, if you're building a site with WordPress (so other contributors
-have a nice interface for adding & maintaining content) and Gatsby, the _data_
-for the site (pages and posts) are in WordPress and you _pull_ that data, as
-needed, into your components.
+Например, если вы создаете сайт с WordPress (поэтому другие участники имеют приятный интерфейс для добавления и сохранения контента) и Gatsby, то _данные_
+для сайта (страницы и сообщения) находятся в WordPress и ты _pull_ эти данные, по мере необходимости, в ваши компоненты.
 
-Data can also live in file types like Markdown, CSV, etc. as well as databases
-and APIs of all sorts.
+Данные также могут использоваться в типах файлов, таких как Markdown, CSV, etc. а также в базах данных и API всех видов.
 
-**Gatsby's data layer lets us pull data from these (and any other source)
-directly into our components**—in the shape and form we want.
+**Слой данных Gatsby позволяет нам извлекать данные из этих (и любого другого источника)
+прямо в наши компоненты**—в нужной нам форме.
 
-## How Gatsby's data layer uses GraphQL to pull data into components
+## Как слой данных Gatsby использует GraphQL для извлечения данных в компоненты
 
-There are many options for loading data into React components. One of the most
-popular and powerful of these is a technology called
+Существует множество вариантов загрузки данных в компоненты React. Одним из самых популярных и мощных из них является технология, называемая
 [GraphQL](http://graphql.org/).
 
-GraphQL was invented at Facebook to help product engineers _pull_ needed data into
-components.
+GraphQL был изобретен в Facebook чтобы помочь инженерам-разработчикам _pull_ Необходимые данные для компонентов.
 
-GraphQL is a **q**uery **l**anguage (the _QL_ part of its name). If you're
-familiar with SQL, it works in a very similar way. Using a special syntax, you describe
-the data you want in your component and then that data is given
-to you.
+GraphQL это **q**uery **l**anguage ( _QL_ часть его названия). Если вы знакомы с SQL, он работает очень схожим образом. Используя специальный синтаксис, вы описываете данные, которые вы хотите в своем компоненте, и затем данные вам даются.
 
-Gatsby uses GraphQL to enable components to declare the data they need.
+Gatsby использует GraphQL чтобы компоненты могли объявлять нужные им данные.
 
-## Our first GraphQL query
+## Наш первый запрос GraphQL
 
-Let's create another new site for this part of the tutorial like in the previous
-parts. We're going to build a Markdown blog called "Pandas Eating Lots".
-It's dedicated to showing off the best pictures & videos of Pandas eating lots
-of food. Along the way we'll be dipping our toes into GraphQL and Gatsby's
-Markdown support.
+Давайте создадим еще один новый сайт для этой части учебника, как в предыдущих частях. Мы собираемся построить Markdown блог называемый "Pandas Eating Lots".
+Он посвящен демонстрации лучших фотографий и видеороликов Pandas, которые много едят. По пути мы будем погружать наши пальцы в GraphQL и поддержку Markdown от Gatsby.
 
-Open a new terminal window and run the following commands to create a new Gatsby site in a directory called `tutorial-part-four`. Then change to this new directory:
+Откройте новое окно терминала и запустите следующие команды, чтобы создать новый сайт Gatsby в каталоге под названием `tutorial-part-four`. Затем перейдите в этот новый каталог:
 
 ```shell
 gatsby new tutorial-part-four https://github.com/gatsbyjs/gatsby-starter-hello-world
 cd tutorial-part-four
 ```
 
-Then install some other needed dependencies at the root of the project. We'll use the Typography theme
-Kirkham + we'll try out a CSS-in-JS library
+Затем установите некоторые другие необходимые зависимости в корне проекта. Мы будем использовать тему Typography 
+Kirkham + мы попробуем CSS-in-JS библиотеку
 [Glamorous](https://glamorous.rocks/):
 
 ```shell
 npm install --save gatsby-plugin-typography gatsby-plugin-glamor glamorous typography-theme-kirkham
 ```
 
-Let's set up a site similar to what we ended with in Part Three. This site will have a layout
-component and two page components:
+Давайте создадим сайт, похожий на то, что мы закончили в третьей части. Этот сайт будет иметь layout компонент и два page componentа:
 
 `src/pages/index.js`
 
@@ -119,8 +102,7 @@ export default () => (
   <div>
     <h1>About Pandas Eating Lots</h1>
     <p>
-      We're the only site running on your computer dedicated to showing the best
-      photos and videos of pandas eating lots of food.
+      Мы единственный сайт, работающий на вашем компьютере, предназначенный для показа лучших фотографий и видео панд, которые едят много еды.
     </p>
   </div>
 );
@@ -189,31 +171,23 @@ module.exports = {
 };
 ```
 
-Add the above files and then run `gatsby develop` like normal and you should see
-the following:
+Добавьте вышеуказанные файлы, а затем выполните `gatsby develop` как обычно, и вы должны увидеть следующее:
 
 ![start](start.png)
 
-We have another small site with a layout and two pages.
+У нас есть еще один небольшой сайт с layout и двумя страницами.
 
-Now let's start querying 😋
+Теперь давайте начнем запросы 😋
 
-## Querying for the site title
+## Запрос названия сайта
 
-When building sites, it's common to want to reuse common bits of data across the
-site. Like the _site title_ for example. Look at the `/about/` page. You'll
-notice that we have the site title in both the layout component (the site
-header) as well as in the title of the About page. But what if we want to change
-the site title at some point in the future? We'd have to search across all our
-components for spots using the site title and edit each instance of the title. This process is both cumbersome and
-error-prone, especially as sites get larger and more complex. It's much better to
-store the title in one place and then _pull_ that title into components whenever
-we need it.
+При создании сайтов обычно требуется повторно использовать общие фрагменты данных по всему сайту. Как _site title_ например. Посмотрите на `/about/` страницу. Вы заметите, что у нас есть название сайта и в layout компоненте (в
+header) и в заголовке страницы About. Но что, если мы хотим изменить название сайта в какой-то момент в будущем? Нам нужно будет искать по всем нашим компонентам точки, используя название сайта и редактировать каждый экземпляр заголовка. Этот процесс является громоздким и подверженным ошибкам, особенно, поскольку сайты становятся все более сложными. Гораздо лучше сохранить название в одном месте, а затем _pull_ этот заголовок в компоненты, когда нам это нужно.
 
-To solve this, we can add site "metadata" — like page title or description — to the `gatsby-config.js` file. Let's add our site title to
-`gatsby-config.js` file and then query it from our layout and about page!
+Чтобы решить эту проблему, мы можем добавить сайт "metadata" — как в page title или description — в файле `gatsby-config.js`. Давайте добавим название нашего сайта в файле
+`gatsby-config.js` файл, а затем запросим его в наш layout и about page!
 
-Edit your `gatsby-config.js`:
+Отредактируйте `gatsby-config.js`:
 
 ```javascript{2-4}
 module.exports = {
@@ -232,9 +206,9 @@ module.exports = {
 };
 ```
 
-Restart the development server.
+Перезапустите сервер разработки.
 
-Then edit the two components:
+Затем отредактируйте два компонента:
 
 `src/pages/about.js`
 
@@ -247,8 +221,7 @@ export default ({ data }) =>
       About {data.site.siteMetadata.title}
     </h1>
     <p>
-      We're the only site running on your computer dedicated to showing the best
-      photos and videos of pandas eating lots of food.
+     Мы единственный сайт, работающий на вашем компьютере, предназначенный для показа лучших фотографий и видеороликов панд, которые едят много еды.
     </p>
   </div>
 
@@ -304,46 +277,37 @@ export const query = graphql`
 `
 ```
 
-It worked!! 🎉
+Это сработало!! 🎉
 
 ![fake-title-graphql](fake-title-graphql.png)
 
-But let's restore the real title.
+Но давайте восстановим реальный заголовок.
 
-One of the core principles of Gatsby is creators need an immediate connection to
-what they're creating
-([hat tip to Bret Victor](http://blog.ezyang.com/2012/02/transcript-of-inventing-on-principleb/)).
-Or, in other words, when you make any change to code you should immediately see
-the effect of that change. You manipulate an input of Gatsby and you see the new
-output showing up on the screen.
+Одним из основных принципов Gatsby является то, что создатели нуждаются в непосредственной связи с тем, что они создают
+([шляпа к Брету Виктору](http://blog.ezyang.com/2012/02/transcript-of-inventing-on-principleb/)).
+Или, другими словами, когда вы вносите какие-либо изменения в код, вы должны немедленно увидеть эффект от этого изменения. Вы управляете входом Gatsby, и вы видите, что новый вывод отображается на экране.
 
-So almost everywhere, changes you make will immediately take effect.
+Поэтому почти везде изменения, которые вы вносите, немедленно вступят в силу.
 
-Try editing the title in `siteMetadata`—change the title back to "Pandas Eating
-Lots". The change should show up very quickly in your browser.
+Попробуйте отредактировать заголовок в `siteMetadata`—измените название на «Pandas Eating Lots». Это изменение должно появиться очень быстро в вашем браузере.
 
-## Wait — where did the graphql tag come from?
+## Подождите — откуда появился тэг graphql?
 
-You may have noticed that we used a
+Возможно, вы заметили, что мы использовали
 [tag function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals#Tagged_template_literals)
-called `graphql`, but we never actually _import_ a `graphql` tag. So... how does
-this not throw an error?
+под названием `graphql`, но мы никогда на самом деле не _import_ этот `graphql` tag. Итак ... как это не выдает ошибку?
 
-The short answer is this: during the Gatsby build process, GraphQL queries are
-pulled out of the original source for parsing.
+Короткий ответ таков: во время процесса сборки Gatsby запросы GraphQL выводятся из исходного источника для синтаксического анализа.
 
-The longer answer is a little more involved: Gatsby borrows a technique from
-[Relay](https://facebook.github.io/relay/) that converts our source code into an
-[abstract syntax tree (AST)](https://en.wikipedia.org/wiki/Abstract_syntax_tree)
-during the build step. All `graphql`-tagged templates are found in
+Более длинный ответ немного больше: Гэтсби заимствует технику из
+[Relay](https://facebook.github.io/relay/) который преобразует наш исходный код в
+[абстрактное синтаксическое дерево (AST)](https://en.wikipedia.org/wiki/Abstract_syntax_tree)
+во время этапа сборки. Все `graphql`-tagged шаблоны находятся в
 [`file-parser.js`](https://github.com/gatsbyjs/gatsby/blob/v1.6.3/packages/gatsby/src/internal-plugins/query-runner/file-parser.js#L63)
-and
+и
 [`query-compiler.js`](https://github.com/gatsbyjs/gatsby/blob/v1.6.3/packages/gatsby/src/internal-plugins/query-runner/query-compiler.js),
-which effectively removes them from the original source code. This means that
-the `graphql` tag isn’t executed the way that we might expect, which is why
-there’s no error, despite the fact that we’re technically using an undefined tag
-in our source.
+который эффективно удаляет их из исходного исходного кода. Это означает, что `graphql` tag не выполняется так, как мы могли бы ожидать, поэтому нет ошибки, несмотря на то, что мы технически используем неопределенный тег в нашем источнике.
 
-## What's coming next?
+## Что теперь?
 
-Next, you'll be learning about how to pull data into your Gatsby site using GraphQL with source plugins in [part five](/tutorial/part-five/) of the tutorial.
+Затем вы узнаете, как извлекать данные на свой сайт Gatsby с помощью GraphQL с исходными плагинами в [пятой части](/tutorial/part-five/) учебника.

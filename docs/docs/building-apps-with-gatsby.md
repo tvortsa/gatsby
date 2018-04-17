@@ -2,37 +2,37 @@
 title: "Building Apps with Gatsby"
 ---
 
-Gatsby is an excellent framework for building web apps. You can use Gatsby to create personalized, logged-in experiences with two different methods.
+Gatsby - отличная основа для создания веб-приложений. Вы можете использовать Gatsby создавать персонализированныx, logged-in опыт  двумя разными методами.
 
-The first approach is to build "hybrid" app pages which are statically rendered with dynamic sections. The second is, if needed, add client-only multi-page sections of the site.
+Первый подход заключается в создании "hybrid" страницы приложения, которые статически отображаются с динамическими разделами. Во втором случае, если необходимо, добавьте многостраничные разделы только для клиента на сайте.
 
 ## Hybrid app pages
 
-With this method, Gatsby renders the initial page with shared page content -- then when your React components load in the browser, they can fetch and render data from APIs. The [React docs have a simple example of how to do this.](https://reactjs.org/docs/faq-ajax.html)
+С помощью этого метода Gatsby отображает начальную страницу с общим содержимым страницы - тогда, когда ваши компоненты React загружаются в браузере, они могут извлекать и отображать данные из API. [React docs имеют простой пример того, как это сделать.](https://reactjs.org/docs/faq-ajax.html)
 
-Some examples of how you could use this:
+Некоторые примеры того, как вы могли бы использовать этот:
 
-* A news site with live data like sports scores or the weather
-* An e-commerce site with universal product pages and category pages, but also personalized recommendation sections
+* Сайт новостей с живыми данными, такими как спортивные результаты или погода
+* Сайт электронной коммерции с универсальными страницами продуктов и страницами категорий, а также персонализированные разделы рекомендаций
 
-You can also use your React components to create interactive widgets e.g. allow a user to do searches or submit forms. Because Gatsby is just React, it's easy to blend static and interactive/dynamic models of building web sites.
+Вы также можете использовать свои React компоненты для создания интерактивных виджетов e.g. разрешая пользователю выполнять поиск или отправлять формы. Поскольку Gatsby это просто React, это легко сочетать статические и интерактивные / динамические модели построения веб-сайтов.
 
 ## Client-only routes & user authentication
 
-Often you want to create a site with client-only portions that are gated by authentication.
+Часто вы хотите создать сайт с частями только для клиента, которые защищены аутентификацией.
 
-A classic example would be a site that has a landing page, various marketing pages, a login page, and then an app section for logged-in users. The logged-in section doesn't need to be server rendered as all data will be loaded live from your API after the user logs so it makes sense to make this portion of your site client-only.
+Классическим примером может быть сайт с целевой страницей, различными страницами маркетинга, страница входа в систему, а затем раздел приложения для зарегистрированных пользователей. Записанный раздел не обязательно должен быть обработан сервером, поскольку все данные будут загружаться в реальном времени из вашего API после регистрации пользователей, поэтому имеет смысл сделать эту часть вашего сайта только для клиента.
 
-These routes will exist on the client only and will not correspond to index.html files in an app's built assets. If you wish people to visit client routes directly, you'll need to setup your server to handle these correctly.
+Эти маршруты будут существовать только на клиенте и не будут соответствовать файлам index.html во встроенных активах приложения. Если вы хотите, чтобы люди напрямую посещали клиентские маршруты, вам нужно настроить сервер для правильной обработки данных.
 
-To create client-only routes, you want to add code to your site's `gatsby-node.js` like the following:
+Для создания клиентских маршрутов, вам надо добавить код на свой сайт `gatsby-node.js` как тут:
 
-_Note: There's also a plugin that can aid in creating client-only routes:
+_Note: Существует также плагин, который может помочь в создании маршрутов только для клиентов:
 [gatsby-plugin-create-client-paths](/packages/gatsby-plugin-create-client-paths/)_.
 
 ```javascript
 // Implement the Gatsby API “onCreatePage”. This is
-// called after every page is created.
+// вызываем после создания каждой страницы.
 exports.onCreatePage = async ({ page, boundActionCreators }) => {
   const { createPage } = boundActionCreators;
 

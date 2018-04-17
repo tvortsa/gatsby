@@ -2,27 +2,25 @@
 title: 'Gatsby Starters'
 ---
 
-The Gatsby CLI tool lets you install "starters". These are partially built sites
-preconfigured to help you get moving faster on creating a certain type of site.
+Инструмент командной строки Gatsby CLI позволяет установить "starters". Это частично построенные сайты, предварительно сконфигурированные, чтобы помочь вам быстрее двигаться по созданию определенного типа сайта.
 
-When creating a new site, you can optionally specify a starter to base your new
-site on e.g.
+При создании нового сайта вы можете указать стартер для создания нового сайта, например
 
 `gatsby new [SITE_DIRECTORY] [URL_OF_STARTER_GITHUB_REPO]`
 
-For example, to quickly create a blog using Gatsby, you could install the Gatsby
-Starter Blog by running:
+Например, чтобы быстро создать блог используя Gatsby, вы можете установить Gatsby
+Starter Blog запустив:
 
 `gatsby new blog https://github.com/gatsbyjs/gatsby-starter-blog`
 
-This downloads the files and initializes the site by running `npm install`
+Что загрузит файлы и инициализирует сайт, комантдой `npm install`
 
-If you don't specify a custom starter, your site will be created from the
+Если вы не укажете starter, ваш сайт будет создан из
 [default starter](https://github.com/gatsbyjs/gatsby-starter-default).
 
-There are several starters that have been created. Create a PR to include yours!
+Есть несколько стартеров, которые были созданы. Создайте PR чтобы включить ваши собственные!
 
-Official:
+Официальные:
 
 * [gatsby-starter-default](https://github.com/gatsbyjs/gatsby-starter-default)
   [(demo)](http://gatsbyjs.github.io/gatsby-starter-default/)
@@ -31,21 +29,21 @@ Official:
 * [gatsby-starter-hello-world](https://github.com/gatsbyjs/gatsby-starter-hello-world)
   [(demo)](https://aberrant-fifth.surge.sh/)
 
-Community:
+Сообщество:
 
 * [gatsby-starter-blog-no-styles](https://github.com/noahg/gatsby-starter-blog-no-styles)
   [(demo)](http://capricious-spring.surge.sh/)
 
-  Features:
+  Особенности:
 
-  * Same as official gatsby-starter-blog but with all styling removed
+  * То же, что и официальный блог gatsby-starter-blog, но при удалении всего стиля
 
 * [gatsby-material-starter](https://github.com/Vagr9K/gatsby-material-starter)
   [(demo)](https://vagr9k.github.io/gatsby-material-starter/)
 
-  Features:
+  Особенности:
 
-  * React-MD for Material design
+  * React-MD для Material design
   * Sass/SCSS
   * Tags
   * Categories
@@ -59,7 +57,7 @@ Community:
 * [gatsby-typescript-starter](https://github.com/fabien0102/gatsby-starter)
   [(demo)](https://fabien0102-gatsby-starter.netlify.com/)
 
-  Features:
+  Особенности:
 
   * Semantic-ui for styling
   * TypeScript
@@ -73,7 +71,7 @@ Community:
 * [gatsby-starter-bootstrap](https://github.com/jaxx2104/gatsby-starter-bootstrap)
   [(demo)](https://jaxx2104.github.io/gatsby-starter-bootstrap/)
 
-  Features:
+  Особенности:
 
   * Bootstrap CSS framework
   * Single column layout
@@ -82,7 +80,7 @@ Community:
 * [gatsby-blog-starter-kit](https://github.com/dschau/gatsby-blog-starter-kit)
   [(demo)](https://dschau.github.io/gatsby-blog-starter-kit/)
 
-  Features:
+  Особенности:
 
   * Blog post listing with previews for each blog post
   * Navigation between posts with a previous/next post button
@@ -91,7 +89,7 @@ Community:
 * [gatsby-starter-casper](https://github.com/haysclark/gatsby-starter-casper)
   [(demo)](https://haysclark.github.io/gatsby-starter-casper/)
 
-  Features:
+  Особенности:
 
   * Page pagination
   * CSS
@@ -107,9 +105,9 @@ Community:
 
   Features:
 
-  * Great for learning about advanced features and their implementations
-  * Does not contain any UI frameworks
-  * Provides only a skeleton
+  * Отлично подходит для изучения расширенных функций и их реализаций
+  * Не содержит каких-либо фреймворков пользовательского интерфейса
+  * Обеспечивает только skeleton
   * Tags
   * Categories
   * Google Analytics
@@ -122,7 +120,7 @@ Community:
 * [glitch-gatsby-starter-blog](https://github.com/100ideas/glitch-gatsby-starter-blog/)
   ([demo](https://gatsby-starter-blog.glitch.me))
 
-  Features:
+  Особенности:
 
   * [live-edit](https://glitch.com/edit/#!/remix/gatsby-starter-blog) a temp,
     anon copy of app
@@ -145,8 +143,8 @@ Community:
 
   Features:
 
-  * Barebones configuration for using the [Grommet](https://grommet.github.io/)
-    design system
+  * Barebones конфигурации для использования [Grommet](https://grommet.github.io/)
+    система проектирования
   * Uses Sass (with CSS modules support)
 
 * [gatsby-starter-basic](https://github.com/PrototypeInteractive/gatsby-react-boilerplate)
@@ -186,21 +184,20 @@ Community:
 * [gatsby-starter-gatsbythemes](https://github.com/saschajullmann/gatsby-starter-gatsbythemes)
   [(demo)](https://themes.gatsbythemes.com/gatsby-starter/)
 
-  Features:
+  Особенности:
 
   * CSS-in-JS via [Emotion](https://github.com/emotion-js/emotion).
-  * Jest and Enzyme for testing.
-  * Eslint in dev mode with the airbnb config and prettier formatting rules.
+  * Jest и Enzyme для тестирования.
+  * Eslint в dev mode с airbnb config и prettier правила форматирования.
   * React 16.
-  * A basic blog, with posts under src/pages/blog. There's also a script which
-    creates a new Blog entry (post.sh).
+  * Основной блог с сообщениями под src/pages/blog. Существует также скрипт, который создает новую запись в блоге (post.sh).
   * Data per JSON files.
-  * A few basic components (Navigation, Footer, Layout).
+  * Несколько основных компонентов (Navigation, Footer, Layout).
   * Layout components make use of
     [Styled-System](https://github.com/jxnblk/styled-system).
   * Google Analytics (you just have to enter your tracking-id).
-  * Gatsby-Plugin-Offline which includes Service Workers.
-  * [Prettier](https://github.com/prettier/prettier) for a uniform codebase.
+  * Gatsby-Plugin-Offline который включает в себя Service Workers.
+  * [Prettier](https://github.com/prettier/prettier) для единой кодовой базы.
   * [Normalize](https://github.com/necolas/normalize.css/) css (7.0).
   * [Feather](https://feather.netlify.com/) icons.
   * Font styles taken from [Tachyons](http://tachyons.io/).
@@ -208,7 +205,7 @@ Community:
 * [gatsby-starter-netlify-cms](https://github.com/AustinGreen/gatsby-starter-netlify-cms)
   [(demo)](https://gatsby-netlify-cms.netlify.com/)
 
-  Features:
+  Особенности:
 
   * A simple blog built with Netlify CMS
   * Basic directory organization
@@ -219,33 +216,33 @@ Community:
 * [gatsby-starter-portfolio-emma](https://github.com/LeKoArts/gatsby-starter-portfolio-emma)
   [(demo)](https://portfolio-emma.netlify.com/)
 
-  The target audience are designers and photographers.
+  Целевая аудитория - это дизайнеры и фотографы.
 
-  Features:
+  Особенности:
 
   * Full-width photo grid-layout (with [gatsby-image](https://using-gatsby-image.gatsbyjs.org/))
   * Minimalistic light theme with large images
-  * Create your projects in Markdown
+  * Создайте свои проекты в Markdown
   * Styling with SCSS and
     [Typography.js](https://kyleamathews.github.io/typography.js/)
-  * Easily configurable
-  * And other good stuff (SEO, Offline Support, WebApp Manifest Support)
+  * Легко настраиваемый
+  * И другие хорошие вещи (SEO, Offline Support, WebApp Manifest Support)
 
 * [gatsby-starter-portfolio-emilia](https://github.com/LeKoArts/gatsby-starter-portfolio-emilia)
   [(demo)](https://portfolio-emilia.netlify.com/)
 
-  The target audience are designers and photographers.
+ Целевая аудитория - это дизайнеры и фотографы.
 
   Features:
 
-  * Focus on big images (with [gatsby-image](https://using-gatsby-image.gatsbyjs.org/))
-  * Dark Theme with HeroPatterns Header
-  * CSS Grid and Styled Components
-  * One-Page layout with sub-pages for projects
-  * Easily configurable
+  * Фокус на большие изображения (with [gatsby-image](https://using-gatsby-image.gatsbyjs.org/))
+  * Темная тема с хэдером HeroPatterns
+  * CSS Grid и Styled сомпоненты
+  * One-Page layout с sub-pages для проектов
+  * Легко настраиваемый
   * React Overdrive transitions
-  * Create your projects in Markdown
-  * And other good stuff (SEO, Offline Support, WebApp Manifest Support)
+  * Создайте свои проекты в Markdown
+  * И другие хорошие вещи (SEO, Offline Support, WebApp Manifest Support)
 
 * [gatsby-starter-bootstrap-netlify](https://github.com/konsumer/gatsby-starter-bootstrap-netlify)
   [(demo)](https://gatsby-starter-bootstrap-netlify.netlify.com)
@@ -270,11 +267,11 @@ Community:
 * [gatsby-starter-dimension](https://github.com/ChangoMan/gatsby-starter-dimension)
   [(demo)](http://gatsby-dimension.surge.sh/)
 
-  Features:
+  Особенности:
 
-  * Based off of the Dimension site template. Designed by
+  * Исходя из Dimension site template. Разработано на
     [HTML5 UP](https://html5up.net/dimension)
-  * Simple one page site that's perfect for personal portfolios
+  * Простой сайт на одну страницу, который идеально подходит для личных портфолио
   * Fully Responsive
   * Styling with SCSS
 
@@ -283,28 +280,27 @@ Community:
 
   Features:
 
-  * All the features from
+  * Все функции из
     [gatsby-advanced-starter](https://github.com/Vagr9K/gatsby-advanced-starter),
-    plus:
-  * Designed for Documentation / Tutorial Websites
-  * 'Table of Contents' Component: Auto generates ToC from posts - just follow
-    the file frontmatter conventions from markdown files in 'lessons'.
+    плюс:
+  * Предназначен для Documentation / Tutorial Веб-сайтов
+  * 'Table of Contents' Component: Автогенерирует ToC из posts - просто следует файловому frontmatter конвенций от markdown файлов в 'lessons'.
   * Styled Components w/ ThemeProvider
   * Basic UI
-  * A few extra components
-  * Custom prismjs theme
+  * Несколько дополнительных компонентов
+  * собственная prismjs theme
   * React Icons
 
 * [gatsby-starter-personal-blog](https://github.com/greglobinski/gatsby-starter-personal-blog)
   [(demo)](https://gatsby-starter-personal-blog.greglobinski.com/)
 
-  Features:
+  Особенности:
 
-  * Ready to use, but easily customizable a fully equipped theme starter
-  * Easy editable content in Markdown files (posts, pages and parts)
+  * Готов к использованию, но легко настраиваемый полностью оборудованный стартер темы
+  * Легко редактируемый контент в Markdown файлы (posts, pages и parts)
   * 'Like an app' layout transitions
-  * Easily restyled through theme object
-  * Styling with JSS
+  * Легко рестайлинг через объект темы
+  * Styling с JSS
   * Page transitions
   * Comments (Facebook)
   * Post categories
@@ -331,7 +327,7 @@ Community:
 
   Features:
 
-  * Create presentations/slides using Gatsby.
+  * Создание презентаций / слайдов с использованием Gatsby.
   * Offline support.
   * Page transitions.
 
@@ -340,10 +336,10 @@ Community:
 
   Features:
 
-  * Based off of the Forty site template. Designed by
+  * Основано на Forty site template. Designed by
     [HTML5 UP](https://html5up.net/forty)
-  * Colorful homepage, and also includes a Landing Page and Generic Page components.
-  * Many elements are available, including buttons, forms, tables, and pagination.
+  * Colorful homepage, а также включает Landing Page и Generic Page components.
+  * Доступны многие элементы, including buttons, forms, tables, и pagination.
   * Styling with SCSS
 
 * [gatsby-firebase-authentication](https://github.com/rwieruch/gatsby-firebase-authentication) [(demo)](https://react-firebase-authentication.wieruch.com/)
@@ -360,10 +356,10 @@ Community:
 
   Features:
 
-  * Based on the Ceevee site template, design by [Styleshout](https://www.styleshout.com/)
-  * Single Page Resume/Portfolio site
+  * На основе Ceevee шаблоне сайта, design by [Styleshout](https://www.styleshout.com/)
+  * Одностраничный сайт резюме / Портфолио 
   * Target audience Developers, Designers, etc.
-  * Used CSS Modules, easy to manipulate
+  * Используемые CSS Модули, просты в управлении
   * FontAwsome Library for icons
   * Responsive Design, optimized for Mobile devices
 
@@ -392,9 +388,9 @@ Community:
 * [verious](https://github.com/cpinnix/verious-boilerplate)
   [(demo)](https://www.verious.io/)
 
-  Features:
+  Особенности:
 
-  * Components only. Bring your own data, plugins, etc.
+  * Только компоненты. Bring your own data, plugins, etc.
   * Bootstrap inspired grid system with Container, Row, Column components.
   * Simple Navigation and Dropdown components.
   * Baseline grid built in with modular scale across viewports.
@@ -404,15 +400,15 @@ Community:
 * [gatsby-starter-lumen](https://github.com/alxshelepenok/gatsby-starter-lumen)
   [(demo)](https://lumen.netlify.com/)
 
-  Features:
+  Особенности:
 
   * Lost Grid.
-  * Beautiful typography inspired by [matejlatin/Gutenberg](https://github.com/matejlatin/Gutenberg).
+  * Красивая типография, вдохновленная [matejlatin/Gutenberg](https://github.com/matejlatin/Gutenberg).
   * [Mobile-First](https://medium.com/@mrmrs_/mobile-first-css-48bc4cc3f60f) approach in development.
-  * Stylesheet built using Sass and [BEM](http://getbem.com/naming/)-Style naming.
-  * Syntax highlighting in code blocks.
-  * Sidebar menu built using a configuration block.
-  * Archive organized by tags and categories.
+  * Стили, построенные с использованием Sass и [BEM](http://getbem.com/naming/)-Style naming.
+  * Подсветка синтаксиса в блоках кода.
+  * Sidebar menu построенный с использованием блока конфигурации.
+  * Archive организованные по тегам и категориям.
   * Automatic RSS generation.
   * Automatic Sitemap generation.
   * Offline support.
@@ -422,7 +418,7 @@ Community:
 * [gatsby-starter-strict](https://github.com/kripod/gatsby-starter-strict)
   [(demo)](https://gatsby-starter-strict.netlify.com)
 
-  Features:
+  Особенности:
 
   * A set of strict linting rules (based on the [Airbnb JavaScript Style Guide](https://github.com/airbnb/javascript))
     * `lint` script
@@ -465,9 +461,9 @@ Community:
   Features:
 
   * CSS-in-JS via [JSS](https://github.com/cssinjs/jss)
-  * easily restyled through theme object
-  * text content via Markdown files
-  * auto-generated sizes and types (png, webp) for background and hero images
+  * легко рестайлинг через объект темы
+  * текстовое содержимое через Markdown файлы
+  * автоматически создаваемые размеры и типы (png, webp) для фона и hero изображений
   * favicons generator
   * webfonts with [webfontloader](https://github.com/typekit/webfontloader)
 
@@ -478,7 +474,7 @@ Community:
 
   * TypeScript
   * TSLint (with custom TSLint rules)
-  * Markdown rendering with Remark
+  * Markdown рендеринг с Remark
   * Basic component structure
   * Styling with [styled-components](https://www.styled-components.com/)
 
@@ -545,11 +541,11 @@ Community:
 
   Features:
 
-  * Based off of the Stellar site template. Designed by
+  * Основан на шаблоне сйата Stellar. Designed by
     [HTML5 UP](https://html5up.net/stellar)
-  * Scroll friendly, responsive site. Can be used as a single or multi-page site.
+  * Дружелюбный к прокрутке, отзывчивый сайт. Может использоваться как одностраничный или многостраничный сайт.
   * Sticky Navigation when scrolling.
-  * Scroll spy and smooth scrolling to different sections of the page.
+  * Scroll spy и smooth scrolling to different sections of the page.
   * Styling with SCSS
 
 * [gatsby-starter-tailwind](https://github.com/taylorbryant/gatsby-starter-tailwind)
@@ -585,9 +581,9 @@ Community:
 * [gatsby-starter-photon](https://github.com/codebushi/gatsby-starter-photon)
   [(demo)](http://gatsby-photon.surge.sh/)
 
-  Features:
+  Особенности:
 
-  * Based off of the Photon site template. Designed by
+  * Основан на шаблоне сайта Photon. Designed by
     [HTML5 UP](https://html5up.net/photon)
   * Single Page, Responsive Site
   * Custom grid made with CSS Grid
@@ -596,29 +592,29 @@ Community:
 * [gatsby-starter-business](https://github.com/v4iv/gatsby-starter-business)
   [(demo)](https://gatsby-starter-business.netlify.com/)
 
-  Features:
+  Особенности:
 
-  * Complete Business Website Suite - Home Page, About Page, Pricing Page, Contact Page and Blog
-  * Netlify CMS for Content Management
+  * Полный пакет бизнес-сайтов - Home Page, About Page, Pricing Page, Contact Page и Blog
+  * Netlify CMS для Content Management
   * SEO Friendly (Sitemap, Schemas, Meta Tags, GTM etc)
-  * Bulma and Sass Support for styling
-  * Progressive Web App & Offline Support
+  * Bulma а также Sass Support для стилизации
+  * Прогрессивное веб-приложение и автономная поддержка
   * Tags and RSS Feed for Blog
   * Disqus and Share Support
 
 * [gatsby-advanced-blog](https://github.com/wonism/gatsby-advanced-blog)
   [(demo)](https://kind-cori-836fe1.netlify.com/)
 
-  Features:
+  Особенности:
 
-  * Blog post listing with previews (image + summary) for each blog post
-  * Categories and tags for blog posts with pagination
-  * Search post with keyword
+  * Список сообщений в блоге с превью (image + summary) для каждого сообщения в блоге
+  * Категории и теги для сообщений в блогах с разбивкой на страницы
+  * Поиск сообщения с ключевым словом
   * Put react application / tweet into post
-  * Copy some codes in post with clicking button
-  * Portfolio
+  * Скопируйте несколько кодов в сообщении с помощью кнопки
+  * портфолио
   * Resume
-  * Redux for managing statement (with redux-saga / reselect)
+  * Redux для управления состоянием (с redux-saga / reselect)
 
 * [gatsby-starter-procyon](https://github.com/danielmahon/gatsby-starter-procyon)
   [(demo)](https://gatsby-starter-procyon.netlify.com/)

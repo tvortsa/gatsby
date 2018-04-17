@@ -3,16 +3,15 @@ title: Source plugins
 typora-copy-images-to: ./
 ---
 
-## What's in this tutorial?
+## В этой части учебника
 
-In this tutorial, you'll be learning about how to pull data into your Gatsby site using GraphQL and source plugins. Before you learn about these plugins, however, you'll want to know how to use something called Graph_i_QL, a tool that helps you structure your queries correctly.
+В этом уроке вы узнаете, как вытащить данные на ваш сайт Gatsby с помощью GraphQL и source плагинов. Однако, прежде чем вы узнаете об этих плагинах, вы захотите узнать, как использовать что-то называемое Graph_i_QL, инструмент, который поможет вам правильно структурировать ваши запросы.
 
-## Introducing Graph_i_QL
+## Введение Graph_i_QL
 
-Graph_i_QL is the GraphQL integrated development environment (IDE). It's a powerful (and all-around awesome) tool
-you'll use often while building Gatsby websites.
+Graph_i_QL это GraphQL интегрированная среда развития (IDE). Это мощный (и удивительный) инструмент который вы будете часто использовать при построении Gatsby сайтов.
 
-You can access it when your site's development server is running—normally at
+Вы можете получить к нему доступ, когда сервер разработки сайта работает - обычно на
 <http://localhost:8000/___graphql>.
 
 <video controls="controls" autoplay="true" loop="true">
@@ -20,31 +19,25 @@ You can access it when your site's development server is running—normally at
   <p>Your browser does not support the video element.</p>
 </video>
 
-Here we poke around the built-in `Site` "type" and see what fields are available
-on it—including the `siteMetadata` object we queried earlier. Try opening
-Graph_i_QL and play with your data! Press <kbd>Ctrl + Space</kbd> to bring up
-the autocomplete window and <kbd>Ctrl + Enter</kbd> to run the query. We'll be
-using Graph_i_QL a lot more through the remainder of the tutorial.
+Здесь мы ткнули вокруг встроенного `Site` "type" и посмотреть, какие поля доступны на нем, включая `siteMetadata` объект, который мы запросили ранее. Попробуйте открыть
+Graph_i_QL и играть с вашими данными! Нажмите <kbd>Ctrl + Space</kbd> вызвать окно автозаполнения и <kbd>Ctrl + Enter</kbd> чтобы выполнить запрос. Мы будем использовать Graph_i_QL намного больше в оставшейся части учебника.
 
-## Source plugins
+## Source плагины
 
-Data in Gatsby sites can come from anywhere: APIs, databases, CMSs,
-local files, etc.
+Данные на сайтах Gatsby могут поступать из любого места: API, базы данных, CMS, локальные файлы и т. Д.
 
-Source plugins fetch data from their source. E.g. the filesystem source plugin
-knows how to fetch data from the file system. The WordPress plugin knows how to
-fetch data from the WordPress API.
+Source плагины извлекают данные из своего источника. Так filesystem source plugin
+знает, как извлекать данные из файловой системы. WordPress plugin знает, как извлекать данные из WordPress API.
 
-Let's add [`gatsby-source-filesystem`](/packages/gatsby-source-filesystem/) and
-explore how it works.
+Давайте добавим [`gatsby-source-filesystem`](/packages/gatsby-source-filesystem/) и изучим, как это работает.
 
-First install the plugin at the root of the project:
+Сначала установите плагин в корне проекта:
 
 ```sh
 npm install --save gatsby-source-filesystem
 ```
 
-Then add it to your `gatsby-config.js`:
+Затем добавьте его в свой `gatsby-config.js`:
 
 ```javascript{6-12}
 module.exports = {
@@ -70,10 +63,10 @@ module.exports = {
 };
 ```
 
-Save that and restart the gatsby development server. Then open up Graph_i_QL
-again.
+Сохраните это и перезапустите сервер разработки gatsby. Затем откройте Graph_i_QL
+еще раз.
 
-If you bring up the autocomplete window, you'll see:
+Если вы откроете окно автозаполнения, вы увидите:
 
 ![graphiql-filesystem](graphiql-filesystem.png)
 
@@ -82,29 +75,26 @@ query.
 
 ![filesystem-query](filesystem-query.png)
 
-Delete the `id` from the query and bring up the autocomplete again (<kbd>Ctrl +
+Удалите `id` из запроса и снова откройте автозаполнение (<kbd>Ctrl +
 Space</kbd>).
 
 ![filesystem-autocomplete](filesystem-autocomplete.png)
 
-Try adding a number of fields to your query, pressing <kbd>Ctrl + Enter</kbd>
-each time to re-run the query. You'll see something like this:
+Попробуйте добавить в запрос несколько полей, нажмите <kbd>Ctrl + Enter</kbd>
+каждый раз для повторного запуска запроса. Вы увидите что-то вроде этого:
 
 ![allfile-query](allfile-query.png)
 
-The result is an array of File "nodes" (node is a fancy name for an object in a
-"graph"). Each File object has the fields we queried for.
+Результатом является массив File "nodes" (node является причудливым именем для объекта в
+"graph"). каждый File объект имеет поля, которые мы запрашивали для.
 
-## Build a page with a GraphQL query
+## Создайте страницу с помощью запроса GraphQL
 
-Building new pages with Gatsby often starts in Graph_i_QL. You first sketch out
-the data query by playing in Graph_i_QL then copy this to a React page component
-to start building the UI.
+Создание новых страниц с помощью Gatsby часто начинается с Graph_i_QL. Сначала вы набросаете запрос данных, играя в Graph_i_QL, затем скопируйте это в React page компонента, чтобы начать строить UI.
 
-Let's try this.
+Попробуем это.
 
-Create a new file at `src/pages/my-files.js` with the `allFile` query we just
-created:
+Создайте новый файл в `src/pages/my-files.js` с `allFile` запросом, который мы только что создали:
 
 ```jsx{4}
 import React from "react"
@@ -130,18 +120,15 @@ export const query = graphql`
 `
 ```
 
-The `console.log(data)` line is highlighted above. It's often helpful when
-creating a new component to console out the data you're getting from the query
-so you can explore the data in your browser console while building the UI.
+Строка `console.log(data)` выделено выше. Часто бывает полезно создать новый компонент для консолидации данных, которые вы получаете из запроса, чтобы вы могли исследовать данные в консоли своего браузера, создавая UI.
 
-If you visit the new page at `/my-files/` and open up your browser console you
-will see:
+Если вы посетите новую страницу в `/my-files/` и откройте свою консоль браузера, вы увидите:
 
 ![data-in-console](data-in-console.png)
 
-The shape of the data matches the shape of the query.
+Форма данных соответствует форме запроса.
 
-Let's add some code to our component to print out the File data.
+Давайте добавим код к нашему компоненту, чтобы распечатать File data.
 
 ```jsx{5-37}
 import React from "react"
@@ -199,10 +186,10 @@ export const query = graphql`
 `
 ```
 
-And… 😲
+И... 😲
 
 ![my-files-page](my-files-page.png)
 
-## What's coming next?
+## Что будет дальше?
 
-Now you've learned how source plugins bring data _into_ Gatsby’s data system. In the next tutorial, you'll learn how transformer plugins _transform_ the raw content brought by source plugins. The combination of source plugins and transformer plugins can handle all data sourcing and data transformation you might need when building a Gatsby site. Click here for the [next tutorial to learn about transformer plugins](/tutorial/part-six/).
+Теперь вы узнали, как source плагины приносят данные _внутрь_ Систему данных Гэтсби. В следующем уроке вы узнаете, как transformer plugins _трансформируют_ raw содержание, предоставленный source плагинами. Сочетание source плагинов и transformer плагинов может обрабатывать все источники данных и преобразование данных, которые вам могут понадобиться при создании сайта Гэтсби. Нажмите здесь для [чтобы узнать о transformer плагинах](/tutorial/part-six/).
