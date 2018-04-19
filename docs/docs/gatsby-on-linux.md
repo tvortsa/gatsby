@@ -1,5 +1,5 @@
 ---
-title: Gatsby on Linux
+title: Gatsby в Linux
 ---
 # Linux
 
@@ -7,7 +7,7 @@ TODO
 
 ## Windows Subsystem Linux (WSL)
 
-As of October 17th 2017, Windows 10 ships with WSL and Linux distributions are available via the [Windows Store], there are several different distributions to use which can be configured via `wslconfig` if you have more than one distribution installed.
+По состоянию на 17 октября 2017 года Windows 10 поставляется с WSL и Linux распределения доступны через [Windows Store], существует несколько различных распределений, которые можно настроить через `wslconfig` если у вас установлено более одного дистрибутива.
 
 ```sh
 # set default distribution to Ubuntu
