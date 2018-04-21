@@ -1,25 +1,23 @@
 ---
-title: "Creating and Modifying Pages"
+title: "Создание и изменение страниц"
 ---
 
-Gatsby makes it easy to programmatically control your pages.
+Gatsby упрощает программный контроль ваших страниц.
 
-Pages can be created in three ways:
+Страницы могут быть созданы тремя способами:
 
-* In your site's gatsby-node.js by implementing the API
+* В вашем сайте gatsby-node.js реализуя API
   [`createPages`](/docs/node-apis/#createPages)
-* Gatsby core automatically turns React components in `src/pages` into pages
-* Plugins can also implement `createPages` and create pages for you
+* Gatsby ядро автоматически преобразует React компоненты в папке `src/pages` в страницы
+* Плагины также могут реализовывать `createPages` и создавать страницы для вас
 
-You can also implement the API [`onCreatePage`](/docs/node-apis/#onCreatePage)
-to modify pages created in core or plugins or to create [client-only routes](/docs/building-apps-with-gatsby/).
+Вы также можете реализовать API [`onCreatePage`](/docs/node-apis/#onCreatePage)
+изменять страницы, созданные в ядре или плагинах, или создавать [client-only routes](/docs/building-apps-with-gatsby/).
 
 ## Debugging help
 
-To see what pages are being created by your code or plugins, you can query for
-page information while developing in Graph*i*QL. Paste the following query in
-the Graph*i*QL IDE for your site. The Graph*i*QL IDE is available when running
-your sites development server at `HOST:PORT/___graphql` e.g.
+Чтобы узнать, какие страницы создаются вашим кодом или плагинами, вы можете запрашивать информацию о странице при разработке в Graph*i*QL.Вставьте следующий запрос в Graph*i*QL IDE для вашего сайта. Graph*i*QL IDE доступен при запуске
+вашего сайта development server по `HOST:PORT/___graphql` e.g.
 `localhost:8000/___graphql`.
 
 ```graphql
@@ -39,25 +37,25 @@ your sites development server at `HOST:PORT/___graphql` e.g.
 }
 ```
 
-You can also query for any `context` data you or plugins added to pages.
+Вы также можете запросить `context` данные, добавленные вами или плагинами на страницы.
 
-## Creating pages in gatsby-node.js
+## Создание страниц в gatsby-node.js
 
-Often you will need to programmatically create pages. For example, you have
-markdown files where each should be a page.
+Часто вам нужно программно создавать страницы. Например, у вас есть
+markdown файлы, каждый из которых должна быть страницей.
 
-This example assumes that each markdown page has a "path" set in the frontmatter
-of the markdown file.
+В этом примере предполагается, что каждая markdown страница имеет "path" заданный во frontmatter
+markdown файла.
 
 ```javascript
-// Implement the Gatsby API “createPages”. This is called once the
-// data layer is bootstrapped to let plugins create pages from data.
+// Реализация Gatsby API “createPages”. Это вызывается один раз когда
+// data layer загружается, чтобы плагины могли создать страницы из файлов.
 exports.createPages = ({ boundActionCreators, graphql }) => {
   const { createPage } = boundActionCreators;
 
   return new Promise((resolve, reject) => {
     const blogPostTemplate = path.resolve(`src/templates/blog-post.js`);
-    // Query for markdown nodes to use in creating pages.
+    // Запрос для markdown узлов используемых в создании страниц.
     resolve(
       graphql(
         `
@@ -78,16 +76,16 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
           reject(result.errors);
         }
 
-        // Create pages for each markdown file.
+        // Создавайте страницы для каждого markdown файла.
         result.data.allMarkdownRemark.edges.forEach(({ node }) => {
           const path = node.frontmatter.path;
           createPage({
             path,
             component: blogPostTemplate,
-            // If you have a layout component at src/layouts/blog-layout.js
+            // Если у вас есть компонент layout component в src/layouts/blog-layout.js
             layout: `blog-layout`,
-            // In your blog post template's graphql query, you can use path
-            // as a GraphQL variable to query for data from the markdown file.
+            // В шаблоне вашего блога graphql query,вы можете использовать путь
+            // как GraphQL переменная для запроса данных из markdown файла.
             context: {
               path,
             },
@@ -99,34 +97,32 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
 };
 ```
 
-## Modifying pages created by core or plugins
+## Изменение страниц, созданных ядром или плагинами
 
-Gatsby core and plugins can automatically create pages for you. Sometimes the
-default isn't quite what you want and you need to modify the created page
+Gatsby ядро и плагины могут автоматически создавать страницы для вас. Иногда по умолчанию не совсем то, что вы хотите, и вам нужно изменить созданные объекты страниц
 objects.
 
-### Removing trailing slashes
+### Удаление конечных слэшей
 
-A common reason for needing to modify automatically created pages is to remove
-trailing slashes.
+Общей причиной необходимости изменения автоматически создаваемых страниц является удаление конечных слэшей.
 
-To do this, in your site's `gatsby-node.js` add code similar to the following:
+Чтобы сделать это, на вашем сайте `gatsby-node.js` добавить код, похожий на следующий:
 
-_Note: There's also a plugin that will remove all trailing slashes from pages automatically:
+_Note: Также есть плагин, который автоматически удалит все трейлинг-косые черты со страниц.:
 [gatsby-plugin-remove-trailing-slashes](/packages/gatsby-plugin-remove-trailing-slashes/)_.
 
 ```javascript
-// Implement the Gatsby API “onCreatePage”. This is
-// called after every page is created.
+// Реализуйте Gatsby API “onCreatePage”.
+// оно вызывается всякий раз после создания страницы.
 exports.onCreatePage = ({ page, boundActionCreators }) => {
   const { createPage, deletePage } = boundActionCreators;
   return new Promise(resolve => {
     const oldPage = Object.assign({}, page);
-    // Remove trailing slash unless page is /
+    // Удаляем trailing slash если страница /
     page.path = _path => (_path === `/` ? _path : _path.replace(/\/$/, ``));
     if (page.path !== oldPage.path) {
-      // Replace new page with old page
-      deletePage(oldPage);
+      // Заменить старую страницу на новую страницу
+            deletePage(oldPage);
       createPage(page);
     }
     resolve();
@@ -134,28 +130,26 @@ exports.onCreatePage = ({ page, boundActionCreators }) => {
 };
 ```
 
-### Choosing the page layout
+### Выбор макета страницы
 
-By default, all pages will use the layout found at `/layouts/index.js`.
+По умолчанию все страницы будут использовать макет, найденный в `/layouts/index.js`.
 
-You may wish to choose a custom layout for certain pages (such as removing
-header and footer for landing pages). You can choose the layout component when
-creating pages with the `createPage` action by adding a layout key to the page
-object or modify pages created elsewhere using the `onCreatePage` API. All
-components in the `/layouts/` directory are automatically available.
+Вы можете выбрать пользовательский макет для определенных страниц (например с удаленным
+хедером и футером для landing pages). Вы можете выбрать компонент макета при создании страниц с помощью `createPage` action добавив ключ макета к объеут страницы
+или изменять страницы, созданные в любом месте, используя `onCreatePage` API. Все компоненты в папке `/layouts/` автоматически доступны.
 
 ```javascript
-// Implement the Gatsby API “onCreatePage”. This is
-// called after every page is created.
+// Реализуем Gatsby API “onCreatePage”.
+// Который вызывается после создания каждой страницы.
 exports.onCreatePage = async ({ page, boundActionCreators }) => {
   const { createPage } = boundActionCreators;
 
   return new Promise((resolve, reject) => {
     if (page.path.match(/^\/landing-page/)) {
-      // It's assumed that `landingPage.js` exists in the `/layouts/` directory
+      // Предполагается, что `landingPage.js` существует в папке `/layouts/`
       page.layout = "landingPage";
 
-      // Update the page.
+      // Обновляем страницу.
       createPage(page);
     }
 

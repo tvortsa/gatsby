@@ -1,23 +1,23 @@
 ---
-title: Gatsby.js Tutorial
+title: Gatsby.js Учебник
 ---
 
-We’re so happy you decided to try using Gatsby. This tutorial has an initial introduction plus seven more parts that'll walk you from getting started developing and building Gatsby sites to deploying a finished and polished high performance static PWA.
+Мы так счастливы, что вы решили попробовать использовать Гэтсби. Этот учебник имеет первоначальное введение и еще семь частей, которые помогут вам начать разработку и создание сайтов Gatsby для развертывания готовой и полированной высокопроизводительной статической PWA.
 
-Note: If you prefer a quick start rather than step-by-step tutorial, see the [getting started page](/docs/).
+Примечание. Если вы предпочитаете быстрый старт, а не пошаговый учебник, см. [getting started page](/docs/).
 
-This tutorial is for _everyone_! You do not need to be a programmer or React.js expert. We'll walk you through things.
+Этот учебник предназначен для _всех_! Вам не обязательно быть программистом или эксперт в React.js. Мы пройдем вас через: 
 
-0. [Programming basics](/tutorial/part-zero/): If you are new to programming, go here for an introduction to some basics like terminal, code editors, and browser consoles.
-1. [Introduction to Gatsby basics](/tutorial/part-one/): Starting new projects, developing, and deploying sites.
-2. [Introduction to using CSS in Gatsby](/tutorial/part-two/): Explore libraries like Typography.js and CSS Modules.
-3. [Building nested layouts in Gatsby](/tutorial/part-three/): Layouts are sections of your site that are reused across multiple pages like headers and footers.
+0. [Основы программирования](/tutorial/part-zero/): Если вы новичок в программировании, перейдите сюда для ознакомления с некоторыми базовыми понятиями, такими как терминалы, редакторы кода и консоли браузера.
+1. [Введение в основы Gatsby](/tutorial/part-one/): Запуск новых проектов, разработка и развертывание сайтов.
+2. [Введение в использование CSS в Gatsby](/tutorial/part-two/): Изучите такие библиотеки, как Typography.js и CSS Modules.
+3. [Создание вложенных макетов в Gatsby](/tutorial/part-three/): Макеты - это разделы вашего сайта, которые повторно используются на нескольких страницах, таких как верхние и нижние колонтитулы.
 
-## Advanced tutorials
+## Расширенные руководства
 
-In these advanced tutorials, you'll learn how to pull data from almost anywhere into your Gatsby site with GraphQL.
+В этих расширенных руководствах вы узнаете, как извлекать данные практически из любого места вашего сайта Gatsby с помощью GraphQL.
 
-4. [Querying for data in a blog](/tutorial/part-four/): Create a blog and use a GraphQL query to pull your site title into the blog header.
-5. [Source plugins and rendering queried data](/tutorial/part-five/): Use a source plugin to pull Markdown blogposts into your site and create an index page with a list of blogposts.
-6. [Transformer plugins](/tutorial/part-six/): Use a transformer plugin to transform your Markdown blogposts into a form the blog can render.
-7. [Programmatically create pages from data](/tutorial/part-seven/): Learn how to programmatically create a set of pages for your blogposts.
+4. [Запрос данных в блоге](/tutorial/part-four/): Создайте блог и используйте GraphQL запросы вытащить название сайта в заголовок блога.
+5. [Исходные плагины и обработка полученных данных](/tutorial/part-five/): Использовать source плагин для подтягивания Markdown blogposts на ваш сайт и создать индексную страницу со списком blogposts.
+6. [Плагины для трансформаторов](/tutorial/part-six/): Используйте плагин трансформатора, чтобы преобразовать ваши блоггеры Markdown в форму, которую блог может отображать.
+7. [Программно создавать страницы из данных](/tutorial/part-seven/): Узнайте, как программно создавать набор страниц для своих блог-постов.

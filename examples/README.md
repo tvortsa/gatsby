@@ -1,19 +1,18 @@
 # Gatsby example websites
 
-Example websites sit on one or the other end of the spectrum from very basic
-to complex/complete.
+Примеры сайтов от простых до очень сложных/законченных.
 
-A basic example website should demonstrate a specific technology/plugin/technique to help other developers understand how to accomplish task. They should be named `using-*` e.g. `using-sass`.
+На базовом примере веб-сайт должен продемонстрировать конкретную технологию / плагин / технику, чтобы помочь другим разработчикам понять, как выполнить задачу. Их следует назвать `using-*` e.g. `using-sass`.
 
-Complex/complete websites are for studying how to build more complex websites.
+Complex/complete веб-сайты предназначены для изучения того, как создавать более сложные веб-сайты.
 
-## Running an example site
+## Запуск примера сайта
 
-1. Enter one of the sites (e.g. `cd gatsbygram`)
-2. Install the dependencies for the site `npm install`
-3. Run the Gatsby development server `gatsby develop`
+1. Войдите на один из сайтов (e.g. `cd gatsbygram`)
+2. Установите зависимости для сайта `npm install`
+3. Запустите Gatsby development server `gatsby develop`
 
-## Checklist for building an example website
+## Контрольный список для создания примерного веб-сайта
 
 * Free of errors
 * Has Google Analytics setup

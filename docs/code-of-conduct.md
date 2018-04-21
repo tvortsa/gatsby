@@ -6,33 +6,27 @@ title: Gatsby Contributor Covenant Code of Conduct
 
 В интересах поощрения открытой и гостеприимной среды мы, как вкладчики и сопровождающие лица, обязуемся сделать участие в нашем проекте и нашем сообществе беззаботным для всех, независимо от возраста, размера тела, инвалидности, этнической принадлежности, гендерной идентичности и выражения, уровень опыта, национальность, личность, раса, религия, сексуальная идентичность и ориентация.
 
-## Our Standards
+## Наши стандарты
 
-Examples of behavior that contributes to creating a positive environment
-include:
+Примеры поведения, способствующего созданию положительной среды, включают:
 
-* Using welcoming and inclusive language
-* Being respectful of differing viewpoints and experiences
-* Gracefully accepting constructive criticism
-* Focusing on what is best for the community
-* Showing empathy towards other community members
+* Использование приветственного и инклюзивного языка
+* Уважение к различным точкам зрения и опыту
+* Изящно принимая конструктивную критику
+* Сосредоточение внимания на том, что лучше всего подходит для сообщества
+* Появление эмпатии к другим членам сообщества
 
-Examples of unacceptable behavior by participants include:
+Примеры неприемлемого поведения участников включают:
 
-* The use of sexualized language or imagery and unwelcome sexual attention or
-  advances
-* Trolling, insulting/derogatory comments, and personal or political attacks
-* Public or private harassment
-* Publishing others' private information, such as a physical or electronic
-  address, without explicit permission
-* Other conduct which could reasonably be considered inappropriate in a
-  professional setting
+* Использование сексуализированного языка или изображений и нежелательного сексуального внимания или успехов
+* Троллинг, оскорбительные / уничижительные комментарии и личные или политические нападения
+* Общественное или личное преследование
+* Публикация частной информации других лиц, например физического или электронного адреса, без явного разрешения
+* Другие действия, которые разумно могут считаться неуместными в профессиональной среде
 
-## Our Responsibilities
+## Наши обязанности
 
-Project maintainers are responsible for clarifying the standards of acceptable
-behavior and are expected to take appropriate and fair corrective action in
-response to any instances of unacceptable behavior.
+Руководители проектов отвечают за разъяснение стандартов приемлемого поведения и, как ожидается, предпримут соответствующие и справедливые корректирующие действия в ответ на любые случаи неприемлемого поведения.
 
 Project maintainers have the right and responsibility to remove, edit, or reject
 comments, commits, code, wiki edits, issues, and other contributions that are

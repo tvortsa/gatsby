@@ -1,21 +1,21 @@
 ---
-title: Creating Tags Pages for Blog Posts
+title: Создание тегов для записей в блогах
 ---
 
-Creating tag pages for your blog post is a way to let visitors browse related content.
+Создание страниц тегов для вашего сообщения в блоге - это способ позволить посетителям просматривать связанный контент.
 
-To add tags to your blog posts, you will first want to have your site set up to turn your markdown pages into blog posts. To get your blog pages set up, see the [tutorial on Gatsby's data layer](/tutorial/part-four/) and [Adding Markdown Pages](/docs/adding-markdown-pages/).
+Чтобы добавлять теги к сообщениям в блоге, вы сначала захотите настроить свой сайт, чтобы превратить ваши страницы разметки в сообщения в блоге. Чтобы настроить настройки вашего блога, см. [учебник по слою данных Гэтсби](/tutorial/part-four/) и [Adding Markdown Pages](/docs/adding-markdown-pages/).
 
-The process will essentially look like this:
+Процесс по существу будет выглядеть следующим образом::
 
-1. Add tags to your `markdown` files
-2. Write a query to get all tags for your posts
-3. Make a tags page template (for `/tags/{tag}`)
-4. Modify `gatsby-node.js` to render pages using that template
-5. Make a tags index page (`/tags`) that renders a list of all tags
-6. _(optional)_ Render tags inline with your blog posts
+1. Добавление тегов в ваши `markdown` файлы
+2. Напишисание запроса, для извлечения всех тегов для ваших сообщений
+3. Сделать шаблон страницы тегов (для `/tags/{tag}`)
+4. Изменение `gatsby-node.js` для рендеринг страниц с использованием этого шаблона
+5. Сделать индексную страницу тегов (`/tags`) который отображает список всех тегов
+6. _(опционально)_ Рендеринг тегов инлайн в постах блога
 
-## Add tags to your `markdown` files
+## Добавление тегов в ваши `markdown` файлы
 
 You add tags by defining them in the `frontmatter` of your Markdown file. The `frontmatter` is the area at the top surrounded by dashes that includes post data like the title and date.
 
