@@ -10,11 +10,11 @@
 
 # Gatsby
 
-⚛️📄🚀 Blazing-fast static site generator for React
+⚛️📄🚀 Поразительно быстрый генератор статических сайтов под React
 
-## Showcase
+## Примеры
 
-Websites built with Gatsby:
+Сайты построенные с помощью Gatsby:
 
 * [React](https://reactjs.org/)
   ([source](https://github.com/reactjs/reactjs.org))
@@ -203,21 +203,21 @@ Websites built with Gatsby:
 * [Chin Loong Tan - Blog/Portfolio](https://chinloongtan.com/)
 * [F1 Vision](https://f1vision.com/)
 
-## Docs
+## Документация
 
-**[View the docs on gatsbyjs.org](https://www.gatsbyjs.org/docs/)**
+**[на сайте gatsbyjs.org](https://www.gatsbyjs.org/docs/)**
 
 [Migrating from v0 to v1?](https://www.gatsbyjs.org/docs/migrating-from-v0-to-v1/)
 
 [v0 docs](https://github.com/gatsbyjs/gatsby/blob/v0.12.48/docs/index.md)
 
-## Packages
+## пакеты
 
 This repository is a monorepo managed using
 [Lerna](https://github.com/lerna/lerna). This means that we publish
 [many packages](/packages) to NPM from the same codebase.
 
-## Thanks
+## благодарности
 
 Thanks to our many contributors and sponsors as well as the companies sponsoring
 our testing and hosting infrastructure, Travis CI, Appveyor, and Netlify.
